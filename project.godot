@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "GBullet",
+"language": "GDScript",
+"path": "res://Scenes/Bullets/GBullet.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "GEnemy",
+"language": "GDScript",
+"path": "res://Scenes/Actors/Enemies/GEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "GPlayer",
+"language": "GDScript",
+"path": "res://Scenes/Actors/Players/GPlayer.gd"
+}, {
 "base": "Node",
 "class": "JSONBeautifier",
 "language": "GDScript",
@@ -18,6 +33,11 @@ _global_script_classes=[ {
 "class": "Persistence",
 "language": "GDScript",
 "path": "res://addons/PersistenceNode/persistence_node.gd"
+}, {
+"base": "GBullet",
+"class": "PlayerBullet",
+"language": "GDScript",
+"path": "res://Scenes/Bullets/PlayerBullet.gd"
 }, {
 "base": "",
 "class": "RPGCharacter",
@@ -60,8 +80,12 @@ _global_script_classes=[ {
 "path": "res://addons/rpg_elements/nodes/RPGWeightInventory.gd"
 } ]
 _global_script_class_icons={
+"GBullet": "",
+"GEnemy": "",
+"GPlayer": "",
 "JSONBeautifier": "",
 "Persistence": "res://addons/PersistenceNode/icon.png",
+"PlayerBullet": "",
 "RPGCharacter": "res://addons/rpg_elements/icons/RPGCharacter.png",
 "RPGDialog": "res://addons/rpg_elements/icons/RPGDialog.png",
 "RPGElement": "",
@@ -81,6 +105,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Main="*res://Scenes/Autoloads/Main.gd"
+DataManager="*res://Scenes/Autoloads/DataManager.tscn"
 PlayerManager="*res://Scenes/Autoloads/PlayerManager.gd"
 
 [display]

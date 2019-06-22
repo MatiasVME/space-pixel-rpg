@@ -6,7 +6,6 @@ var move_left := false
 var move_right := false
 
 var dir # input direction
-#var current_direction = 0
 
 var acceleration = 2
 var current_speed = 0
@@ -36,13 +35,11 @@ func _process(delta):
 			move_right = false
 	
 	dir = - int(move_left) + int(move_right)
-	print(dir)
 	
 	current_speed = lerp(current_speed, dir * speed, acceleration * delta)
 	$"001/Follow".offset += current_speed
 	player.look_at($Center.position)
 	player.rotation_degrees += 90
-	print(current_speed)
 	
 func _on_Controls_move_left(pressed):
 	move_left = pressed

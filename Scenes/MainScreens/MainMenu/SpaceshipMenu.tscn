@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/MainScreens/MainMenu/particle-8x8.png" type="Texture" id=2]
+[ext_resource path="res://Shaders/RandMovement.shader" type="Shader" id=1]
+[ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/MainScreens/MainMenu/particle-8x8.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Start"
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Spaceship:position")
@@ -26,7 +29,8 @@ position = Vector2( -75, 370 )
 rotation = 0.785398
 
 [node name="Sprite" type="Sprite" parent="Spaceship"]
-texture = ExtResource( 1 )
+material = SubResource( 5 )
+texture = ExtResource( 2 )
 
 [node name="Particles" type="CPUParticles2D" parent="Spaceship"]
 position = Vector2( 0, 16 )
@@ -34,8 +38,8 @@ amount = 4
 lifetime = 1.25
 explosiveness = 0.1
 randomness = 0.2
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 autoplay = "Start"
-anims/Start = SubResource( 1 )
+anims/Start = SubResource( 3 )

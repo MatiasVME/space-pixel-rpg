@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/Strocker.tscn" type="PackedScene" id=2]
+
+[node name="L001" type="Node"]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 200 )
+
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 200 )
+
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 200 )
+
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 188 )
+
+[node name="Box5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 188 )
+
+[node name="Box6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 188 )
+
+[node name="Box7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 212 )
+
+[node name="Box8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 212 )
+
+[node name="Box9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 212 )
+
+[node name="Box10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76, 212 )
+
+[node name="Box11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76, 200 )
+
+[node name="Box12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76, 188 )
+
+[node name="Box13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 176 )
+
+[node name="Box14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 176 )
+
+[node name="Box15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 176 )
+
+[node name="Box16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 124, 188 )
+
+[node name="Box17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 124, 200 )
+
+[node name="Box18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 124, 212 )
+
+[node name="Box19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 224 )
+
+[node name="Box20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 224 )
+
+[node name="Box21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 224 )
+
+[node name="Strocker" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74, 174 )
+
+[node name="Strocker2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 174 )
+
+[node name="Strocker3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 226 )
+
+[node name="Strocker4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74, 226 )

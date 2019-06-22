@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/GEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/Strocker.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/EnemyStrocker.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 86.0233
+
+[node name="Strocker" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Collision" parent="HitArea" index="0"]
+shape = SubResource( 2 )
+
+[node name="SeekerArea" type="Area2D" parent="." index="3"]
+
+[node name="Collision" type="CollisionShape2D" parent="SeekerArea" index="0"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="SeekerArea" to="." method="_on_SeekerArea_body_entered"]
+[connection signal="body_exited" from="SeekerArea" to="." method="_on_SeekerArea_body_exited"]

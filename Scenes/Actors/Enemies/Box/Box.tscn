@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/GEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Box/EnemyBox.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 6 )
+
+[node name="Box" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="Collision" parent="HitArea" index="0"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="HitArea" to="." method="_on_HitArea_body_entered"]
