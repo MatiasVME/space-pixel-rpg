@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Scenes/Actors/Enemies/GEnemy.gd" type="Script" id=1]
 
-[node name="GEnemy" type="KinematicBody2D"]
+[node name="GEnemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

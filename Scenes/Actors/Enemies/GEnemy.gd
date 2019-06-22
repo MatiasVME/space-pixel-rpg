@@ -4,3 +4,4 @@ class_name GEnemy
 
 export (int) var hp = 1
 export (int) var drop_xp = 1
+export (int) var attack = 2

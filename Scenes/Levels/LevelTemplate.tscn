@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Controls/Controls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/PathFigures/001.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/Levels/L001.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=5]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,5 +17,7 @@ position = Vector2( 100, 200 )
 [node name="001" parent="." instance=ExtResource( 3 )]
 
 [node name="L001" parent="." instance=ExtResource( 4 )]
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 [connection signal="move_left" from="Controls" to="." method="_on_Controls_move_left"]
 [connection signal="move_right" from="Controls" to="." method="_on_Controls_move_right"]
