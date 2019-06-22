@@ -4,5 +4,8 @@
 export.cfg
 export_presets.cfg
 
-# Mono-specific ignores
-.mono/
+# Algunos plugins (Godot)
+/addons/wakatime
+
+# Linux
+.directory
