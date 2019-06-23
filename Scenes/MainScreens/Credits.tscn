@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Buttons/Back/Back.tscn" type="PackedScene" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="Credits" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_right = 200.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
+text = "CREDITS"
+align = 1
+valign = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 70.0
+margin_right = 200.0
+margin_bottom = 250.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.0392157, 0.741176, 0.776471, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+Game Designer
+Programer
+Music
+Art
+
+Matías Muñoz Espinoza
+[/center]"
+text = "
+Game Designer
+Programer
+Music
+Art
+
+Matías Muñoz Espinoza
+"
+
+[node name="Back" parent="." instance=ExtResource( 2 )]
+margin_left = 80.0
+margin_top = 340.0
+margin_right = 122.0
+margin_bottom = 382.0

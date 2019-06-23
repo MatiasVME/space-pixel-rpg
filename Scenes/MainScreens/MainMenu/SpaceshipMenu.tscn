@@ -1,13 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Shaders/RandMovement.shader" type="Shader" id=1]
 [ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainScreens/MainMenu/particle-8x8.png" type="Texture" id=3]
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
+resource_name = "Go"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spaceship:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 100, 200 ), Vector2( 300, 56 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spaceship:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=2]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Spaceship:position")
@@ -21,15 +49,28 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -75, 370 ), Vector2( 100, 200 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spaceship:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 45.0 ]
+}
 
 [node name="SpaceshipMenu" type="Node2D"]
 
 [node name="Spaceship" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -75, 370 )
 rotation = 0.785398
 
 [node name="Sprite" type="Sprite" parent="Spaceship"]
-material = SubResource( 5 )
+material = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Particles" type="CPUParticles2D" parent="Spaceship"]
@@ -42,4 +83,5 @@ texture = ExtResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 autoplay = "Start"
-anims/Start = SubResource( 3 )
+anims/Go = SubResource( 3 )
+anims/Start = SubResource( 2 )

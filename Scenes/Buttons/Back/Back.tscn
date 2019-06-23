@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Buttons/Back/Back-Normal.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Buttons/Back/Back-Pressed.png" type="Texture" id=2]
+
+[node name="Back" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
