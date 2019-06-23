@@ -7,10 +7,11 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 100, 60, 0, 0, 0, 0, 184, 200, 0, 0, 0, 0, 100, 340, 0, 0, 0, 0, 16, 200, 0, 0, 0, 0, 100, 60 )
 }
 
-[node name="001" type="Path2D"]
+[node name="PF001" type="Path2D"]
 curve = SubResource( 1 )
 
 [node name="Follow" type="PathFollow2D" parent="."]
+position = Vector2( 100, 60 )
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="."]

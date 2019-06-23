@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Go"
 length = 0.4
 tracks/0/type = "value"
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ 45.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Spaceship:position")
@@ -65,7 +65,6 @@ tracks/1/keys = {
 [node name="SpaceshipMenu" type="Node2D"]
 
 [node name="Spaceship" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -75, 370 )
 rotation = 0.785398
 
@@ -83,5 +82,5 @@ texture = ExtResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 autoplay = "Start"
-anims/Go = SubResource( 3 )
-anims/Start = SubResource( 2 )
+anims/Go = SubResource( 2 )
+anims/Start = SubResource( 3 )

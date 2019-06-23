@@ -11,15 +11,20 @@ var acceleration = 2
 var current_speed = 0
 var speed = 2.5
 
+var enemy_mesh
+var path_figure
+
 func _ready():
+	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
+	add_child(enemy_mesh)
+	
+	path_figure = load("res://Scenes/Levels/PathFigures/" + str(LevelManager.path_figure) + ".tscn").instance()
+	add_child(path_figure)
+	
 	player = PlayerManager.create_player()
-	$"001/Follow".add_child(player)
+	path_figure.get_node("Follow").add_child(player)
 	
 func _process(delta):
-#	$"001/Follow".offset += delta * 30 
-#	player.look_at($Center.position)
-#	player.rotation_degrees += 90
-	
 	# Entrada teclado
 	#
 	
@@ -37,7 +42,7 @@ func _process(delta):
 	dir = - int(move_left) + int(move_right)
 	
 	current_speed = lerp(current_speed, dir * speed, acceleration * delta)
-	$"001/Follow".offset += current_speed
+	path_figure.get_node("Follow").offset += current_speed
 	player.look_at($Center.position)
 	player.rotation_degrees += 90
 	
