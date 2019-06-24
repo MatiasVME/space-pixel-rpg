@@ -12,7 +12,10 @@ enum Sound {
 	PLAYER_DAMAGE1,
 	PLAYER_DEATH1,
 	WIN1,
-	LOSE1
+	LOSE1,
+	BOX_DEATH1,
+	SPACESHIP_FLY_MENU1,
+	SPACESHIP_FLY_MENU2
 }
 
 func play(sound):
@@ -44,3 +47,9 @@ func play(sound):
 			$Win1.play()
 		Sound.LOSE1:
 			$Lose1.play()
+		Sound.BOX_DEATH1:
+			$BoxDeath1.play()
+		Sound.SPACESHIP_FLY_MENU1:
+			$SpaceshipFlyMenu1.play()
+		Sound.SPACESHIP_FLY_MENU2:
+			$SpaceshipFlyMenu2.play()

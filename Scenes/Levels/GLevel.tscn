@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Levels/GLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Controls/Controls.tscn" type="PackedScene" id=2]
@@ -11,6 +11,62 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_bloom = 0.1
 glow_blend_mode = 0
+
+[sub_resource type="Animation" id=2]
+resource_name = "Damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Curtain:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Curtain:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.917647, 0, 0.85098, 1 ), Color( 0.917647, 0, 0.85098, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "EnemyDeath"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.05 ), Vector2( 1, 1 ) ]
+}
 
 [node name="GLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -26,7 +82,29 @@ position = Vector2( 100, 200 )
 environment = SubResource( 1 )
 
 [node name="ResultPanel" parent="." instance=ExtResource( 4 )]
-editor/display_folded = false
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="Camera" type="Camera2D" parent="Effects"]
+position = Vector2( 100, 200 )
+current = true
+zoom = Vector2( 1.05, 1.025 )
+
+[node name="Curtain" type="ColorRect" parent="Effects"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 216.0
+margin_bottom = 416.0
+mouse_filter = 2
+color = Color( 0.917647, 0, 0.85098, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anim" type="AnimationPlayer" parent="Effects"]
+anims/Damage = SubResource( 2 )
+anims/EnemyDeath = SubResource( 3 )
 [connection signal="move_left" from="Controls" to="." method="_on_Controls_move_left"]
 [connection signal="move_right" from="Controls" to="." method="_on_Controls_move_right"]
 [connection signal="animation_finished" from="ResultPanel/Anim" to="." method="_on_Anim_animation_finished"]

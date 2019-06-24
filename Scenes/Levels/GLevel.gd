@@ -20,6 +20,7 @@ func _ready():
 	
 	for enemy in enemy_mesh.get_children():
 		enemy.connect("dead", self, "_on_enemy_dead")
+		enemy.connect("mark_to_death", self, "_on_enemy_mark_to_death")
 	
 	path_figure = load("res://Scenes/Levels/PathFigures/" + str(LevelManager.path_figure) + ".tscn").instance()
 	add_child(path_figure)
@@ -28,6 +29,7 @@ func _ready():
 	path_figure.get_node("Follow").add_child(player)
 	
 	player.player_data.connect("dead", self, "_on_player_dead")
+	player.player_data.connect("remove_hp", self, "_on_remove_hp")
 	
 	Main.reset_store()
 	Main.result = Main.Result.NONE
@@ -76,3 +78,12 @@ func _on_player_dead():
 
 func _on_Anim_animation_finished(anim_name):
 	get_tree().change_scene("res://Scenes/Levels/EndLevel.tscn")
+
+func _on_remove_hp(amount):
+	if not $Effects/Anim.is_playing():
+		$Effects/Anim.play("Damage")
+		
+# Antes de morir definitivamente
+func _on_enemy_mark_to_death():
+	if not $Effects/Anim.is_playing():
+		$Effects/Anim.play("EnemyDeath")

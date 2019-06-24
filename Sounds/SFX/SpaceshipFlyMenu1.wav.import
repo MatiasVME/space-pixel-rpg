@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SpaceshipFlyMenu1.wav-92bef3a36693deba4aceae852ae6738a.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/SpaceshipFlyMenu1.wav"
+dest_files=[ "res://.import/SpaceshipFlyMenu1.wav-92bef3a36693deba4aceae852ae6738a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

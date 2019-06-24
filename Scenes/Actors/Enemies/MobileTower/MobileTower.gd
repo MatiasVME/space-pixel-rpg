@@ -22,6 +22,7 @@ func damage(amount):
 	hp -= amount
 	
 	if hp <= 0:
+		emit_signal("mark_to_death")
 		$Anim.play("Dead")
 		$Collision.disabled = true
 		is_mark_to_dead = true

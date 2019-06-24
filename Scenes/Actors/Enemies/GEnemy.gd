@@ -12,6 +12,7 @@ var is_mark_to_dead = false
 onready var player_data = DataManager.players[0]
 
 signal dead
+signal mark_to_death # Antes de morir
 
 func dead():
 	player_data.add_xp(drop_xp)

@@ -11,8 +11,8 @@ func _on_credits_pressed():
 func _on_Back_pressed():
 	$Camera.global_position = Vector2(100, 200)
 	$MainMenu/SpaceshipMenu/Anim.play("Start")
-	SoundManager.play(SoundManager.Sound.BUTTON1)
+	SoundManager.play(SoundManager.Sound.SPACESHIP_FLY_MENU2)
 
 func _on_Start_pressed():
 	$Camera.global_position = Vector2(100, -200)
-#	SoundManager.play(SoundManager.Sound.BUTTON1)
+	SoundManager.play(SoundManager.Sound.SPACESHIP_FLY_MENU1)
