@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DeathScream7.wav-14b730da5c17e2d1ade1cf886a2350c2.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/DeathScream7.wav"
+dest_files=[ "res://.import/DeathScream7.wav-14b730da5c17e2d1ade1cf886a2350c2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

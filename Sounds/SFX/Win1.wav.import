@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Win1.wav-8a45ec2bcc4effce0cf35056fc7e78e8.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/Win1.wav"
+dest_files=[ "res://.import/Win1.wav-8a45ec2bcc4effce0cf35056fc7e78e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

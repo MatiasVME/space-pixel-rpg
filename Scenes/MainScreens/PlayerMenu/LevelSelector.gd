@@ -11,13 +11,17 @@ func _on_Left_pressed():
 	if current_level - 1 > 0:
 		current_level -= 1
 		$Display.text = str(current_level)
-
+		
+	SoundManager.play(SoundManager.Sound.BUTTON1)
+	
 func _on_Right_pressed():
 	if current_level + 1 <= last_level:
 		current_level += 1
 		$Display.text = str(current_level)
-
+		
+	SoundManager.play(SoundManager.Sound.BUTTON1)
+	
 func _on_Start_pressed():
-	Main.current_level = current_level
 	LevelManager.level(current_level)
+	SoundManager.play(SoundManager.Sound.BUTTON1)
 	

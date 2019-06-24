@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Crazy.ogg-f4e0af3014a95b91b39a68488b2e71e6.oggstr"
+
+[deps]
+
+source_file="res://Sounds/BGM/Crazy.ogg"
+dest_files=[ "res://.import/Crazy.ogg-f4e0af3014a95b91b39a68488b2e71e6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

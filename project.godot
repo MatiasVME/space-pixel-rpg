@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "GBullet",
+"class": "EnemyBullet",
+"language": "GDScript",
+"path": "res://EnemyBullet.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "GBullet",
 "language": "GDScript",
@@ -80,6 +85,7 @@ _global_script_classes=[ {
 "path": "res://addons/rpg_elements/nodes/RPGWeightInventory.gd"
 } ]
 _global_script_class_icons={
+"EnemyBullet": "",
 "GBullet": "",
 "GEnemy": "",
 "GPlayer": "",
@@ -108,6 +114,8 @@ Main="*res://Scenes/Autoloads/Main.gd"
 DataManager="*res://Scenes/Autoloads/DataManager.tscn"
 PlayerManager="*res://Scenes/Autoloads/PlayerManager.gd"
 LevelManager="*res://Scenes/Autoloads/LevelManager.gd"
+MusicManager="*res://Scenes/Autoloads/MusicManager.tscn"
+SoundManager="*res://Scenes/Autoloads/SoundManager.tscn"
 
 [display]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Levels/PathFigures/figure2.png" type="Texture" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 100, 60, 0, 0, 0, 0, 81, 91, 0, 0, 0, 0, 20, 79, 0, 0, 0, 0, 35, 167, 0, 0, 0, 0, 17, 200, 0, 0, 0, 0, 35, 233, 0, 0, 0, 0, 21, 320, 0, 0, 0, 0, 81, 309, 0, 0, 0, 0, 100, 339, 0, 0, 0, 0, 118, 310, 0, 0, 0, 0, 178, 322, 0, 0, 0, 0, 165, 234, 0, 0, 0, 0, 183, 199, 0, 0, 0, 0, 164, 168, 0, 0, 0, 0, 180, 79, 0, 0, 0, 0, 120, 92, 0, 0, 0, 0, 100, 59, 0, 0, 0, 0, 100, 60 )
+}
+
+[node name="PF2" type="Path2D"]
+curve = SubResource( 1 )
+
+[node name="Follow" type="PathFollow2D" parent="."]
+position = Vector2( 100, 60 )
+rotate = false
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false

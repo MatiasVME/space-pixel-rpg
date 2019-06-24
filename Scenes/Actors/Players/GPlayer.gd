@@ -10,6 +10,7 @@ func _ready():
 	player_data = DataManager.players[0]
 	
 	player_data.connect("dead", self, "_on_dead")
+	player_data.connect("remove_hp", self, "_on_remove_hp")
 
 func damage(amount):
 	player_data.damage(amount)
@@ -20,8 +21,13 @@ func _on_dead():
 	$Timer.stop()
 
 func _on_Timer_timeout():
+	if Main.result == Main.Result.WIN:
+		$Timer.stop()
+	
 	var bullet = player_bullet.instance()
 	bullet.position = $Sprite/SpawnBullet.global_position
 	get_parent().get_parent().add_child(bullet)
 	
+func _on_remove_hp(amount):
+	SoundManager.play(SoundManager.Sound.PLAYER_DAMAGE1)
 	

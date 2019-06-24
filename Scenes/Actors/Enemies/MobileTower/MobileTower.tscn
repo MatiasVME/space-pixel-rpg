@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/GEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/EnemyMobileTower-0.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/EnemyMobileTower-1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/EnemyMobileTower-2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/EnemyMobileTower-3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "move",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6, 6 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 112.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 78.1025
+
+[sub_resource type="Animation" id=6]
+resource_name = "Damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00637013, 0.1, 0.2 ),
+"transitions": PoolRealArray( 0.5, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.2, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="MobileTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+hp = 2
+drop_xp = 3
+drop_score = 4
+attack = 2
+
+[node name="Sprite" parent="." index="0"]
+editor/display_folded = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, -2 )
+
+[node name="Origin" type="Position2D" parent="Sprite" index="0"]
+position = Vector2( 0, -8 )
+
+[node name="Dest" type="Position2D" parent="Sprite" index="1"]
+position = Vector2( 0, -16 )
+
+[node name="Body" type="AnimatedSprite" parent="." index="1"]
+frames = SubResource( 1 )
+animation = "move"
+
+[node name="Collision" parent="." index="2"]
+shape = SubResource( 2 )
+
+[node name="Collision" parent="HitArea" index="0"]
+shape = SubResource( 3 )
+
+[node name="DetectPlayerArea" type="Area2D" parent="." index="4"]
+
+[node name="Collision" type="CollisionShape2D" parent="DetectPlayerArea" index="0"]
+shape = SubResource( 4 )
+
+[node name="FireArea" type="Area2D" parent="." index="5"]
+
+[node name="Collision" type="CollisionShape2D" parent="FireArea" index="0"]
+shape = SubResource( 5 )
+
+[node name="Fire" type="Timer" parent="." index="6"]
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="." index="7"]
+anims/Damage = SubResource( 6 )
+anims/Dead = SubResource( 7 )
+[connection signal="body_entered" from="HitArea" to="." method="_on_HitArea_body_entered"]
+[connection signal="body_entered" from="DetectPlayerArea" to="." method="_on_DetectPlayerArea_body_entered"]
+[connection signal="body_exited" from="DetectPlayerArea" to="." method="_on_DetectPlayerArea_body_exited"]
+[connection signal="body_entered" from="FireArea" to="." method="_on_FireArea_body_entered"]
+[connection signal="body_exited" from="FireArea" to="." method="_on_FireArea_body_exited"]
+[connection signal="timeout" from="Fire" to="." method="_on_Fire_timeout"]
+[connection signal="animation_finished" from="Anim" to="." method="_on_Anim_animation_finished"]

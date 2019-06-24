@@ -18,11 +18,21 @@ func _ready():
 	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
 	add_child(enemy_mesh)
 	
+	for enemy in enemy_mesh.get_children():
+		enemy.connect("dead", self, "_on_enemy_dead")
+	
 	path_figure = load("res://Scenes/Levels/PathFigures/" + str(LevelManager.path_figure) + ".tscn").instance()
 	add_child(path_figure)
 	
 	player = PlayerManager.create_player()
 	path_figure.get_node("Follow").add_child(player)
+	
+	player.player_data.connect("dead", self, "_on_player_dead")
+	
+	Main.reset_store()
+	Main.result = Main.Result.NONE
+	
+	MusicManager.random_music()
 	
 func _process(delta):
 	# Entrada teclado
@@ -51,3 +61,18 @@ func _on_Controls_move_left(pressed):
 
 func _on_Controls_move_right(pressed):
 	move_right = pressed
+	
+func _on_enemy_dead():
+	# Es 1 por que el último enemigo todavía no muere
+	if enemy_mesh.get_child_count() <= 1:
+		Main.result = Main.Result.WIN
+		$ResultPanel/Anim.play("Win")
+		SoundManager.play(SoundManager.Sound.WIN1)
+		
+func _on_player_dead():
+	Main.result = Main.Result.LOSE
+	$ResultPanel/Anim.play("Lose")
+	SoundManager.play(SoundManager.Sound.LOSE1)
+
+func _on_Anim_animation_finished(anim_name):
+	get_tree().change_scene("res://Scenes/Levels/EndLevel.tscn")

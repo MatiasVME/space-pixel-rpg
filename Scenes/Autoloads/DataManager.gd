@@ -51,7 +51,12 @@ func save_all_data():
 
 func create_global_config():
 	global_config["DeleteData"] = delete_data
-	global_config["LastLevelPassed"] = 0
+	
+	if not Main.DEBUG:
+		global_config["LastLevelPassed"] = 0
+	else:
+		global_config["LastLevelPassed"] = Main.LAST_LEVEL - 1
+		
 	global_config["Score"] = 0
 	
 	$DataGlobalConfig.save_data()
