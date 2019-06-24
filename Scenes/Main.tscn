@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainScreens/MainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/MainScreens/Credits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MainScreens/PlayerMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/MainScreens/Config.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -37,12 +38,19 @@ position = Vector2( 200, 0 )
 [node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 0, -398 )
+
+[node name="Config" parent="." instance=ExtResource( 5 )]
+position = Vector2( -200, 0 )
+[connection signal="pressed" from="MainMenu/Config" to="." method="_on_Config_pressed"]
 [connection signal="pressed" from="MainMenu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="PlayerMenu/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Config/Back" to="." method="_on_Back_pressed"]
 
 [editable path="MainMenu"]
 
 [editable path="Credits"]
 
 [editable path="PlayerMenu"]
+
+[editable path="Config"]

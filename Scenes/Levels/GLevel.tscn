@@ -84,6 +84,7 @@ environment = SubResource( 1 )
 [node name="ResultPanel" parent="." instance=ExtResource( 4 )]
 
 [node name="Effects" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Camera" type="Camera2D" parent="Effects"]
 position = Vector2( 100, 200 )
@@ -105,8 +106,12 @@ __meta__ = {
 [node name="Anim" type="AnimationPlayer" parent="Effects"]
 anims/Damage = SubResource( 2 )
 anims/EnemyDeath = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 [connection signal="move_left" from="Controls" to="." method="_on_Controls_move_left"]
 [connection signal="move_right" from="Controls" to="." method="_on_Controls_move_right"]
 [connection signal="animation_finished" from="ResultPanel/Anim" to="." method="_on_Anim_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="ResultPanel"]

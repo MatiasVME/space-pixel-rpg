@@ -16,3 +16,7 @@ func _on_Back_pressed():
 func _on_Start_pressed():
 	$Camera.global_position = Vector2(100, -200)
 	SoundManager.play(SoundManager.Sound.SPACESHIP_FLY_MENU1)
+
+func _on_Config_pressed():
+	$Camera.global_position = Vector2(-100, 200)
+	SoundManager.play(SoundManager.Sound.BUTTON1)

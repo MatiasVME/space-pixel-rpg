@@ -6,6 +6,8 @@ enum Sound {
 	DEATH_SCREAM2,
 	DEATH_SCREAM3,
 	DEATH_SCREAM4,
+	DEATH_SCREAM5,
+	DEATH_SCREAM6,
 	LASER1,
 	LASER2,
 	LEVEL_UP1,
@@ -33,6 +35,10 @@ func play(sound):
 			$DeathScream3.play()
 		Sound.DEATH_SCREAM4:
 			$DeathScream4.play()
+		Sound.DEATH_SCREAM5:
+			$DeathScream5.play()
+		Sound.DEATH_SCREAM6:
+			$DeathScream6.play()
 		Sound.LASER1:
 			$Laser1.play()
 		Sound.LASER2:

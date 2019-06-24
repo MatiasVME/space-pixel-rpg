@@ -25,7 +25,8 @@ func update_lvl():
 
 func _on_level_up(current_level):
 	update_lvl()
-	SoundManager.play(SoundManager.Sound.LEVEL_UP1)	
+	SoundManager.play(SoundManager.Sound.LEVEL_UP1)
+	$Level/Anim.play("LevelUp")
 	
 func _on_add_xp(amount):
 	update_xp()

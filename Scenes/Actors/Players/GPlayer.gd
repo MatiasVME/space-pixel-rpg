@@ -26,6 +26,7 @@ func _on_Timer_timeout():
 	
 	var bullet = player_bullet.instance()
 	bullet.position = $Sprite/SpawnBullet.global_position
+	bullet.damage = player_data.attack
 	get_parent().get_parent().add_child(bullet)
 	
 func _on_remove_hp(amount):

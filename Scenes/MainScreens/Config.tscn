@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/MainScreens/Config.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Buttons/DeleteData/DeleteData-Normal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Buttons/DeleteData/DeleteData-Pressed.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Buttons/Back/Back.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Config" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ConfigTitle" type="Label" parent="."]
+margin_top = 16.0
+margin_right = 200.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
+text = "CONFIG"
+align = 1
+valign = 1
+
+[node name="DeleteTitle" type="Label" parent="."]
+margin_top = 88.0
+margin_right = 200.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
+text = "DELETE GAME DATA"
+align = 1
+valign = 1
+
+[node name="DeleteButton" type="TextureButton" parent="."]
+margin_left = 38.0
+margin_top = 140.0
+margin_right = 156.0
+margin_bottom = 174.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="TextButton" type="Label" parent="DeleteButton"]
+margin_top = 2.0
+margin_right = 118.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0352941, 0.0941176, 0.2, 1 )
+text = "DELETE"
+align = 1
+valign = 1
+
+[node name="Back" parent="." instance=ExtResource( 5 )]
+margin_left = 82.0
+margin_top = 336.0
+margin_right = 124.0
+margin_bottom = 378.0
+
+[node name="AreYouSure" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = -200.0
+margin_top = 224.0
+margin_bottom = 294.0
+window_title = "Delete Game Data"
+dialog_text = "¿Are you sure?"
+[connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
+[connection signal="confirmed" from="AreYouSure" to="." method="_on_AreYouSure_confirmed"]

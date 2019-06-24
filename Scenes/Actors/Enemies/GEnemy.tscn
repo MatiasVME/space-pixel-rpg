@@ -6,6 +6,7 @@
 "Enemy",
 ]]
 script = ExtResource( 1 )
+drop_xp = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 

@@ -14,6 +14,8 @@ var speed = 2.5
 var enemy_mesh
 var path_figure
 
+var win = false
+
 func _ready():
 	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
 	add_child(enemy_mesh)
@@ -30,6 +32,7 @@ func _ready():
 	
 	player.player_data.connect("dead", self, "_on_player_dead")
 	player.player_data.connect("remove_hp", self, "_on_remove_hp")
+	player.player_data.connect("level_up", self, "_on_level_up")
 	
 	Main.reset_store()
 	Main.result = Main.Result.NONE
@@ -57,7 +60,15 @@ func _process(delta):
 	path_figure.get_node("Follow").offset += current_speed
 	player.look_at($Center.position)
 	player.rotation_degrees += 90
-	
+
+func win_check():
+	# Es 1 por que el último enemigo todavía no muere
+	if enemy_mesh.get_child_count() <= 1:
+		Main.result = Main.Result.WIN
+		$ResultPanel/Anim.play("Win")
+		SoundManager.play(SoundManager.Sound.WIN1)
+		win = true
+
 func _on_Controls_move_left(pressed):
 	move_left = pressed
 
@@ -65,11 +76,8 @@ func _on_Controls_move_right(pressed):
 	move_right = pressed
 	
 func _on_enemy_dead():
-	# Es 1 por que el último enemigo todavía no muere
-	if enemy_mesh.get_child_count() <= 1:
-		Main.result = Main.Result.WIN
-		$ResultPanel/Anim.play("Win")
-		SoundManager.play(SoundManager.Sound.WIN1)
+	if not win:
+		win_check()
 		
 func _on_player_dead():
 	Main.result = Main.Result.LOSE
@@ -87,3 +95,14 @@ func _on_remove_hp(amount):
 func _on_enemy_mark_to_death():
 	if not $Effects/Anim.is_playing():
 		$Effects/Anim.play("EnemyDeath")
+		
+func _on_level_up(level):
+	player.player_data.max_hp += 2
+	player.player_data.add_hp(2)
+	player.player_data.attack += 1
+
+func _on_Timer_timeout():
+#
+#	if not win:
+#		win_check()
+	pass

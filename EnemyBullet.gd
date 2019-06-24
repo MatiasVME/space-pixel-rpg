@@ -3,6 +3,7 @@ extends GBullet
 class_name EnemyBullet
 
 var dest := Vector2()
+var velocity := 100
 
 func _ready():
 	origin_pos = global_position
@@ -11,7 +12,7 @@ func _ready():
 	SoundManager.play(SoundManager.Sound.LASER1)
 
 func _process(delta):
-	move_and_slide(dir * 100)
+	move_and_slide(dir * velocity)
 	$Sprite.rotation_degrees += delta * 600
 
 func _on_CollisionArea_body_entered(body):

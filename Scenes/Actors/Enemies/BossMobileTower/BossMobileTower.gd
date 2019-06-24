@@ -12,7 +12,7 @@ var enemy_bullet = preload("res://Scenes/Bullets/EnemyBullet.tscn")
 func _process(delta):
 	if objective and not is_mark_to_dead and not is_fire_area:
 		dir = (objective.global_position - global_position).normalized()
-		move_and_slide(dir * delta * 1000)
+		move_and_slide(dir * delta * 2000)
 	elif fire_objective and not is_mark_to_dead:
 		$Sprite.look_at(fire_objective.global_position)
 		$Sprite.rotation_degrees += 90
@@ -20,7 +20,7 @@ func _process(delta):
 func damage(amount):
 	if is_mark_to_dead:
 		return
-		
+	
 	$Anim.play("Damage")
 	hp -= amount
 	
@@ -29,7 +29,7 @@ func damage(amount):
 		$Anim.play("Dead")
 		$Collision.disabled = true
 		is_mark_to_dead = true
-		SoundManager.play(SoundManager.Sound.DEATH_SCREAM2)
+		SoundManager.play(SoundManager.Sound.DEATH_SCREAM6)
 
 func _on_DetectPlayerArea_body_entered(body):
 	if body is GPlayer:
@@ -63,6 +63,7 @@ func _on_Fire_timeout():
 	enemy_bullet_object.dest = $Sprite/Dest.global_position
 	enemy_bullet_object.global_position = $Sprite/Origin.global_position
 	enemy_bullet_object.damage = attack
+	enemy_bullet_object.velocity = 200
 	get_parent().get_parent().add_child(enemy_bullet_object)
 
 func _on_HitArea_body_entered(body):

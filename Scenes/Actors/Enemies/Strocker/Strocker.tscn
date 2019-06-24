@@ -87,7 +87,9 @@ tracks/2/keys = {
 
 [node name="Strocker" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-hp = 2
+hp = 4
+drop_score = 1
+attack = 6
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )

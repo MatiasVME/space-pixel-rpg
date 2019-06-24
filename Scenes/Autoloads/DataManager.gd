@@ -1,6 +1,6 @@
 extends Node
 
-var current_user := "User"
+var current_user := "Player"
 var global_config # Es una referencia al diccionario de $DataGlobalConfig
 
 # Instancias, para ser utilizadas. Instancias de RPGElements.
@@ -8,7 +8,7 @@ var players = []
 
 # Si este numero cambia la data se borra, normalmente el numero
 # debe ir incrementando
-var delete_data = 3
+var delete_data = 0
 
 func _ready():
 	configure_persistence_node()
@@ -48,6 +48,7 @@ func create_or_load_data_if_not_exist():
 
 func save_all_data():
 	save_players()
+	save_global_config()
 
 func create_global_config():
 	global_config["DeleteData"] = delete_data
@@ -94,3 +95,7 @@ func load_players():
 func remove_all_data():
 	$DataGlobalConfig.remove_all_data()
 	$DataPlayers.remove_all_data()
+	
+func save_global_config():
+	$DataGlobalConfig.save_data()
+	

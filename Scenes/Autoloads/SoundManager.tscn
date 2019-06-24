@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Autoloads/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/Button1.wav" type="AudioStream" id=2]
@@ -6,16 +6,18 @@
 [ext_resource path="res://Sounds/SFX/DeathScream2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/SFX/DeathScream3.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sounds/SFX/DeathScream4.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sounds/SFX/Laser1.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sounds/SFX/Laser2.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/SFX/LevelUP1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sounds/SFX/PlayerDamage1.wav" type="AudioStream" id=10]
-[ext_resource path="res://Sounds/SFX/PlayerDead1.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sounds/SFX/Win1.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sounds/SFX/Lose1.wav" type="AudioStream" id=13]
-[ext_resource path="res://Sounds/SFX/BoxDeath1.wav" type="AudioStream" id=14]
-[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu1.wav" type="AudioStream" id=15]
-[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/SFX/DeathScream5.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/SFX/DeathScream6.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/SFX/Laser1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/SFX/Laser2.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/SFX/LevelUP1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/SFX/PlayerDamage1.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/SFX/PlayerDead1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/SFX/Win1.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/SFX/Lose1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/SFX/BoxDeath1.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu2.wav" type="AudioStream" id=18]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource( 1 )
@@ -40,42 +42,50 @@ volume_db = -15.0
 stream = ExtResource( 6 )
 volume_db = -15.0
 
-[node name="Laser1" type="AudioStreamPlayer" parent="."]
+[node name="DeathScream5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -15.0
 
-[node name="Laser2" type="AudioStreamPlayer" parent="."]
+[node name="DeathScream6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -15.0
 
-[node name="LevelUP1" type="AudioStreamPlayer" parent="."]
+[node name="Laser1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -15.0
 
-[node name="PlayerDamage1" type="AudioStreamPlayer" parent="."]
+[node name="Laser2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -15.0
 
-[node name="PlayerDeath1" type="AudioStreamPlayer" parent="."]
+[node name="LevelUP1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -15.0
 
-[node name="Win1" type="AudioStreamPlayer" parent="."]
+[node name="PlayerDamage1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -15.0
 
-[node name="Lose1" type="AudioStreamPlayer" parent="."]
+[node name="PlayerDeath1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -15.0
 
-[node name="BoxDeath1" type="AudioStreamPlayer" parent="."]
+[node name="Win1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = -15.0
 
-[node name="SpaceshipFlyMenu1" type="AudioStreamPlayer" parent="."]
+[node name="Lose1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -15.0
 
-[node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
+[node name="BoxDeath1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+volume_db = -15.0
+
+[node name="SpaceshipFlyMenu1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -15.0
+
+[node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
 volume_db = -15.0

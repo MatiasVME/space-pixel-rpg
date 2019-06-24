@@ -7,7 +7,7 @@ const DEBUG := false
 const MUSIC_ENABLE := true
 const SOUND_ENABLE := true
 
-const LAST_LEVEL := 3  # Tiene que estar en 1
+const LAST_LEVEL := 7
 
 var current_level := 0
 

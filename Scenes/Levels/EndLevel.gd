@@ -11,6 +11,8 @@ func _ready():
 	# Se pierde
 	else:
 		lose()
+		
+	DataManager.save_all_data()
 
 func _process(delta):
 	$Reload.rect_rotation -= delta * 300
@@ -21,12 +23,19 @@ func win():
 	
 	if Main.current_level + 1 <= Main.LAST_LEVEL + 1:
 		$Next.visible = true
+	
+	DataManager.global_config["Score"] += Main.store_score
+	
+	if Main.current_level > DataManager.global_config["LastLevelPassed"] and Main.current_level + 1 != Main.LAST_LEVEL:
+		DataManager.global_config["LastLevelPassed"] = Main.current_level
 
 func lose():
 	$ResultTitle.text = "YOU LOSE"
 	
 	Main.store_score /= 2
 	$Score.text = str(Main.store_score)
+	
+	DataManager.global_config["Score"] += Main.store_score
 	
 func _on_Next_pressed():
 	SoundManager.play(SoundManager.Sound.BUTTON1)
