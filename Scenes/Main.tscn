@@ -31,9 +31,6 @@ smoothing_speed = 3.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 2 )]
 
-[node name="Title" parent="MainMenu" index="1"]
-editor/display_folded = true
-
 [node name="Credits" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
 position = Vector2( 200, 0 )

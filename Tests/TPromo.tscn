@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/MainScreens/MainMenu/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+glow_blend_mode = 0
+
+[node name="TPromo" type="Node2D"]
+
+[node name="Title" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 112 )
+
+[node name="SpaceshipMenu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 398, -54 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

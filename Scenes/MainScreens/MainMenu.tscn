@@ -1,87 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/MainScreens/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Buttons/Credits/Credits-Normal.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Buttons/Credits/Credits-Pressed.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Buttons/Config/Config-Normal.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Buttons/Config/Config-Pressed.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/MainScreens/MainMenu/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MainScreens/MainMenu/SpaceshipMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Buttons/Credits/Credits-Normal.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Buttons/Credits/Credits-Pressed.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Buttons/Config/Config-Normal.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Buttons/Config/Config-Pressed.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Space:rect_rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 2.3, 2.7, 3, 10 ),
-"transitions": PoolRealArray( 1, 0.5, 0.5, 0.5, 1, 1 ),
-"update": 0,
-"values": [ -15.0, -15.0, 15.0, -45.0, -15.0, -15.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Space:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 7, 7.3, 7.6, 10 ),
-"transitions": PoolRealArray( 1, 0.5, 0.5, 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.6, 1.6 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Pixel:rect_rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 4, 4.3, 4.6, 10 ),
-"transitions": PoolRealArray( 1, 0.5, 0.5, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 15.0, 0.0, 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("RPG:rect_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 8.5, 8.8, 9.1, 10 ),
-"transitions": PoolRealArray( 1, 0.5, 0.5, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 2, 1.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("RPG:rect_rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 9.4, 9.7, 10 ),
-"transitions": PoolRealArray( 1, 0.5, 0.5, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 180.0, 0.0 ]
-}
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 100, 90 )
 
 [node name="MainMenu" type="Node2D"]
@@ -91,75 +23,34 @@ script = ExtResource( 1 )
 margin_right = 200.0
 margin_bottom = 10.0
 rect_pivot_offset = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0392157, 0.741176, 0.776471, 1 )
 text = "v0.0.0"
 align = 2
 valign = 1
 
-[node name="Title" type="Node2D" parent="."]
-position = Vector2( 0, 32 )
+[node name="Title" parent="." instance=ExtResource( 3 )]
 
-[node name="RPG" type="Label" parent="Title"]
-margin_left = 42.0
-margin_top = 62.0
-margin_right = 114.0
-margin_bottom = 102.0
-rect_pivot_offset = Vector2( 34, 20 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.443137, 0.109804, 0.568627, 1 )
-text = "RPG"
-align = 1
-valign = 1
-
-[node name="Pixel" type="Label" parent="Title"]
-margin_left = 76.0
-margin_top = 28.0
-margin_right = 196.0
-margin_bottom = 68.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
-text = "PIXEL"
-align = 1
-valign = 1
-
-[node name="Space" type="Label" parent="Title"]
-margin_left = 15.1319
-margin_top = -6.21064
-margin_right = 135.132
-margin_bottom = 33.7894
-rect_rotation = -15.0
-rect_pivot_offset = Vector2( 60, 20 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0392157, 0.741176, 0.776471, 1 )
-text = "SPACE"
-align = 1
-valign = 1
-
-[node name="Anim" type="AnimationPlayer" parent="Title"]
-autoplay = "Idle"
-anims/Idle = SubResource( 2 )
-
-[node name="SpaceshipMenu" parent="." instance=ExtResource( 3 )]
+[node name="SpaceshipMenu" parent="." instance=ExtResource( 4 )]
 
 [node name="Credits" type="TextureButton" parent="."]
 margin_left = 144.0
 margin_top = 344.0
 margin_right = 186.0
 margin_bottom = 386.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 
 [node name="Config" type="TextureButton" parent="."]
 margin_left = 16.0
 margin_top = 344.0
 margin_right = 58.0
 margin_bottom = 386.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 
 [node name="Start" type="TouchScreenButton" parent="."]
 position = Vector2( 100, 234 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
