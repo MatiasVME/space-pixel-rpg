@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/MainScreens/Credits.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=2]
@@ -26,12 +26,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0.443137, 0.109804, 0.568627, 0 ), Color( 0.0352941, 0.0941176, 0.2, 1 ) ]
 }
-
-[sub_resource type="Environment" id=4]
-background_mode = 4
-glow_enabled = true
-glow_bloom = 0.2
-glow_blend_mode = 0
 
 [node name="Credits" type="Node2D"]
 script = ExtResource( 1 )
@@ -88,8 +82,5 @@ color = Color( 0.443137, 0.109804, 0.568627, 0 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 3 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
 [connection signal="timeout" from="End" to="." method="_on_End_timeout"]
 [connection signal="animation_finished" from="Anim" to="." method="_on_Anim_animation_finished"]
