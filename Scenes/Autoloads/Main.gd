@@ -6,6 +6,7 @@ const RES_Y := 400
 const DEBUG := false
 const MUSIC_ENABLE := true
 const SOUND_ENABLE := true
+const VERSION = "v0.1.0.COWBOY8625-JAM"
 
 const LAST_LEVEL := 7
 

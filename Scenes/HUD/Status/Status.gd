@@ -15,10 +15,12 @@ func _ready():
 func update_hp():
 	$HP/HPProgress.max_value = player_data.max_hp
 	$HP/HPProgress.value = player_data.hp
+	$HP/HPText.text = str(player_data.hp) + "/" + str(player_data.max_hp)
 	
 func update_xp():
 	$XP/XPProgress.max_value = player_data.get_xp_required(player_data.level + 1)
 	$XP/XPProgress.value = player_data.xp
+	$XP/XPText.text = str(player_data.xp) + "/" + str(player_data.get_xp_required(player_data.level + 1))
 
 func update_lvl():
 	$Level/Label.text = str(player_data.level)

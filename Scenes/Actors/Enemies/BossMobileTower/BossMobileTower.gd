@@ -7,6 +7,8 @@ var is_fire_area := false
 var fire_objective
 var can_fire := false
 
+var rotator_acum = 0.0
+
 var enemy_bullet = preload("res://Scenes/Bullets/EnemyBullet.tscn")
 
 func _process(delta):
@@ -15,8 +17,11 @@ func _process(delta):
 		move_and_slide(dir * delta * 2000)
 	elif fire_objective and not is_mark_to_dead:
 		$Sprite.look_at(fire_objective.global_position)
-		$Sprite.rotation_degrees += 90
-
+		rotator_acum += delta * rand_range(200, 300)
+		$Sprite.rotation_degrees += rotator_acum
+#		$Sprite.rotation_degrees += 90
+		
+		
 func damage(amount):
 	if is_mark_to_dead:
 		return
@@ -63,9 +68,9 @@ func _on_Fire_timeout():
 	enemy_bullet_object.dest = $Sprite/Dest.global_position
 	enemy_bullet_object.global_position = $Sprite/Origin.global_position
 	enemy_bullet_object.damage = attack
-	enemy_bullet_object.velocity = 200
+	enemy_bullet_object.velocity = 50
 	get_parent().get_parent().add_child(enemy_bullet_object)
-
+	
 func _on_HitArea_body_entered(body):
 	if body is PlayerBullet:
 		damage(body.damage)

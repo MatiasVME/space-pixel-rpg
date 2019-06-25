@@ -10,3 +10,6 @@ onready var center = Vector2(100, 200)
 
 func _on_Notifier_screen_exited():
 	queue_free()
+
+func _on_Timer_timeout():
+	queue_free()

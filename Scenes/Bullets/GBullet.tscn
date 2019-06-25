@@ -18,4 +18,10 @@ position = Vector2( -5.96046e-08, 2.38419e-07 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="TimeToDead" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
 [connection signal="screen_exited" from="Notifier" to="." method="_on_Notifier_screen_exited"]
+[connection signal="timeout" from="TimeToDead" to="." method="_on_Timer_timeout"]
