@@ -11,6 +11,9 @@ var rotator_acum = 0.0
 
 var enemy_bullet = preload("res://Scenes/Bullets/EnemyBullet.tscn")
 
+func _ready():
+	randomize()
+
 func _process(delta):
 	if objective and not is_mark_to_dead and not is_fire_area:
 		dir = (objective.global_position - global_position).normalized()
@@ -19,8 +22,6 @@ func _process(delta):
 		$Sprite.look_at(fire_objective.global_position)
 		rotator_acum += delta * rand_range(200, 300)
 		$Sprite.rotation_degrees += rotator_acum
-#		$Sprite.rotation_degrees += 90
-		
 		
 func damage(amount):
 	if is_mark_to_dead:

@@ -85,7 +85,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="BossMobileTower" instance=ExtResource( 1 )]
+[node name="BossMobileTower" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 hp = 250
 drop_xp = 2

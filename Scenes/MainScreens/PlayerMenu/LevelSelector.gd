@@ -1,15 +1,14 @@
 extends Node2D
 
-onready var last_level = DataManager.global_config["LastLevelPassed"]
+onready var last_level = DataManager.global_config["LastLevelPassed"] + 1
 var current_level = 0
 
 func _ready():
+	if last_level > Main.LAST_LEVEL:
+		last_level -= 1
+		
 	$Display.text = str(last_level)
-	
-	if last_level < Main.LAST_LEVEL:
-		current_level = int(last_level + 1)
-	else:
-		current_level = int(last_level)
+	current_level = int(last_level)
 	
 func _on_Left_pressed():
 	if current_level - 1 > 0:
