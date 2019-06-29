@@ -41,7 +41,8 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="ResultTitle" type="Label" parent="."]
-margin_right = 200.0
+margin_left = 22.0
+margin_right = 222.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0392157, 0.741176, 0.776471, 1 )
@@ -50,11 +51,12 @@ align = 1
 valign = 1
 
 [node name="Status" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 88 )
+position = Vector2( 22, 88 )
 
 [node name="ScoreTitle" type="Label" parent="."]
+margin_left = 22.0
 margin_top = 158.0
-margin_right = 200.0
+margin_right = 222.0
 margin_bottom = 178.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
@@ -63,8 +65,9 @@ align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="."]
+margin_left = 22.0
 margin_top = 182.0
-margin_right = 200.0
+margin_right = 222.0
 margin_bottom = 222.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
@@ -73,17 +76,17 @@ align = 1
 valign = 1
 
 [node name="Back" parent="." instance=ExtResource( 4 )]
-margin_left = 10.0
+margin_left = 32.0
 margin_top = 346.0
-margin_right = 52.0
+margin_right = 74.0
 margin_bottom = 388.0
 
 [node name="Next" type="TextureButton" parent="."]
 editor/display_folded = true
 visible = false
-margin_left = 146.0
+margin_left = 170.0
 margin_top = 346.0
-margin_right = 188.0
+margin_right = 212.0
 margin_bottom = 388.0
 rect_pivot_offset = Vector2( 21, 21 )
 texture_normal = ExtResource( 5 )
@@ -94,9 +97,9 @@ autoplay = "Idle"
 anims/Idle = SubResource( 4 )
 
 [node name="Reload" type="TextureButton" parent="."]
-margin_left = 78.0
+margin_left = 100.0
 margin_top = 346.0
-margin_right = 120.0
+margin_right = 142.0
 margin_bottom = 388.0
 rect_pivot_offset = Vector2( 21, 21 )
 texture_normal = ExtResource( 7 )

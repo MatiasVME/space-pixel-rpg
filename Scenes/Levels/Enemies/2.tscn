@@ -6,109 +6,109 @@
 [node name="E001" type="Node"]
 
 [node name="Box2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 200 )
+position = Vector2( 130, 200 )
 
 [node name="Box3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 200 )
+position = Vector2( 106, 200 )
 
 [node name="Box4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 188 )
+position = Vector2( 106, 188 )
 
 [node name="Box5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 188 )
+position = Vector2( 118, 188 )
 
 [node name="Box6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 188 )
+position = Vector2( 130, 188 )
 
 [node name="Box7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 212 )
+position = Vector2( 130, 212 )
 
 [node name="Box8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 212 )
+position = Vector2( 118, 212 )
 
 [node name="Box9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 212 )
+position = Vector2( 106, 212 )
 
 [node name="Box10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 76, 212 )
+position = Vector2( 94, 212 )
 
 [node name="Box11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 76, 200 )
+position = Vector2( 94, 200 )
 
 [node name="Box12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 76, 188 )
+position = Vector2( 94, 188 )
 
 [node name="Box13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 176 )
+position = Vector2( 106, 176 )
 
 [node name="Box14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 176 )
+position = Vector2( 118, 176 )
 
 [node name="Box15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 176 )
+position = Vector2( 130, 176 )
 
 [node name="Box16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 124, 188 )
+position = Vector2( 142, 188 )
 
 [node name="Box17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 124, 200 )
+position = Vector2( 142, 200 )
 
 [node name="Box18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 124, 212 )
+position = Vector2( 142, 212 )
 
 [node name="Box19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 224 )
+position = Vector2( 130, 224 )
 
 [node name="Box20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 224 )
+position = Vector2( 118, 224 )
 
 [node name="Box21" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 224 )
+position = Vector2( 106, 224 )
 
 [node name="Box22" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 262 )
+position = Vector2( 106, 262 )
 
 [node name="Box23" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 262 )
+position = Vector2( 118, 262 )
 
 [node name="Box24" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 262 )
+position = Vector2( 130, 262 )
 
 [node name="Box25" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 142 )
+position = Vector2( 130, 142 )
 
 [node name="Box26" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 142 )
+position = Vector2( 118, 142 )
 
 [node name="Box27" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 142 )
+position = Vector2( 106, 142 )
 
 [node name="Strocker" parent="." instance=ExtResource( 2 )]
-position = Vector2( 74, 174 )
+position = Vector2( 92, 174 )
 
 [node name="Strocker2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 126, 174 )
+position = Vector2( 144, 174 )
 
 [node name="Strocker3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 126, 226 )
+position = Vector2( 144, 226 )
 
 [node name="Strocker4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 74, 226 )
+position = Vector2( 92, 226 )
 
 [node name="Strocker5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88, 242 )
+position = Vector2( 106, 242 )
 
 [node name="Strocker6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 242 )
+position = Vector2( 130, 242 )
 
 [node name="Strocker7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 156 )
+position = Vector2( 130, 156 )
 
 [node name="Strocker8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88, 156 )
+position = Vector2( 106, 156 )
 
 [node name="Strocker9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 100, 128 )
+position = Vector2( 118, 128 )
 
 [node name="Strocker10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 100, 276 )
+position = Vector2( 118, 276 )

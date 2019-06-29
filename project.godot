@@ -119,7 +119,7 @@ SoundManager="*res://Scenes/Autoloads/SoundManager.tscn"
 
 [display]
 
-window/size/width=200
+window/size/width=240
 window/size/height=400
 window/size/test_width=400
 window/size/test_height=800

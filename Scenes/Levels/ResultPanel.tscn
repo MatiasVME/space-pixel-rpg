@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Lose"
 length = 3.0
 tracks/0/type = "value"
@@ -70,7 +70,7 @@ tracks/4/keys = {
 "values": [ "LOSE...", "LOSE...", "LOSE..", "LOSE.", "LOSE" ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Win"
 length = 4.0
 tracks/0/type = "value"
@@ -147,7 +147,6 @@ tracks/5/keys = {
 }
 
 [node name="ResultPanel" type="Node2D"]
-editor/display_folded = true
 
 [node name="ResultTitle" type="Label" parent="."]
 margin_left = -152.569
@@ -155,12 +154,12 @@ margin_top = 178.0
 margin_right = -32.5686
 margin_bottom = 218.0
 rect_pivot_offset = Vector2( 60, 24 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
 text = "WIN"
 align = 1
 valign = 1
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/Lose = SubResource( 3 )
-anims/Win = SubResource( 4 )
+anims/Lose = SubResource( 2 )
+anims/Win = SubResource( 3 )

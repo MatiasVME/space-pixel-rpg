@@ -4,16 +4,17 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 100, 60, 0, 0, 0, 0, 184, 200, 0, 0, 0, 0, 100, 340, 0, 0, 0, 0, 16, 200, 0, 0, 0, 0, 100, 60 )
+"points": PoolVector2Array( 0, 0, 0, 0, 120, 64, 0, 0, 0, 0, 203, 201, 0, 0, 0, 0, 120, 341, 0, 0, 0, 0, 37, 201, 0, 0, 0, 0, 120, 62 )
 }
 
 [node name="PF1" type="Path2D"]
 curve = SubResource( 1 )
 
 [node name="Follow" type="PathFollow2D" parent="."]
-position = Vector2( 100, 60 )
+position = Vector2( 120, 64 )
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 20, 0 )
 texture = ExtResource( 1 )
 centered = false

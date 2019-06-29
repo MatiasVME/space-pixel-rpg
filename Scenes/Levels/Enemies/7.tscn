@@ -5,5 +5,6 @@
 [node name="E3" type="Node"]
 
 [node name="BossMobileTower" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 220 )
+position = Vector2( 120, 220 )
+hp = 300
 attack = 4

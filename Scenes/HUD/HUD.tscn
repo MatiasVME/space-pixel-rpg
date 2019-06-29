@@ -5,3 +5,4 @@
 [node name="HUD" type="CanvasLayer"]
 
 [node name="Status" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 0 )
