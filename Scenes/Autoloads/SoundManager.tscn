@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Autoloads/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/Button1.wav" type="AudioStream" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Sounds/SFX/BoxDeath1.wav" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu1.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu2.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/SFX/Ready1.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sounds/SFX/YouLose1.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/SFX/YouWin1.wav" type="AudioStream" id=21]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource( 1 )
@@ -89,3 +92,18 @@ volume_db = -15.0
 [node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
 volume_db = -15.0
+
+[node name="Ready1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="YouLose1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="YouWin1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -10.0
+pitch_scale = 1.5
