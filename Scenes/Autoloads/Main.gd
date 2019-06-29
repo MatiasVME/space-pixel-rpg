@@ -6,7 +6,7 @@ const RES_Y := 400
 const DEBUG := false
 const MUSIC_ENABLE := true
 const SOUND_ENABLE := true
-const VERSION = "v0.1.0"
+const VERSION = "v0.1.2"
 
 const LAST_LEVEL := 7
 

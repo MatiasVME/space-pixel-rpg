@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Levels/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=2]
@@ -13,20 +13,14 @@
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="Environment" id=2]
-background_mode = 4
-glow_enabled = true
-glow_bloom = 0.2
-glow_blend_mode = 0
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Idle"
 length = 2.0
 loop = true
@@ -55,9 +49,6 @@ text = "RESULT"
 align = 1
 valign = 1
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
-
 [node name="Status" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 88 )
 
@@ -65,7 +56,7 @@ position = Vector2( 0, 88 )
 margin_top = 158.0
 margin_right = 200.0
 margin_bottom = 178.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
 text = "SCORE"
 align = 1
@@ -75,7 +66,7 @@ valign = 1
 margin_top = 182.0
 margin_right = 200.0
 margin_bottom = 222.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.917647, 0, 0.85098, 1 )
 text = "99999999"
 align = 1
@@ -100,7 +91,7 @@ texture_pressed = ExtResource( 6 )
 
 [node name="Anim" type="AnimationPlayer" parent="Next"]
 autoplay = "Idle"
-anims/Idle = SubResource( 5 )
+anims/Idle = SubResource( 4 )
 
 [node name="Reload" type="TextureButton" parent="."]
 margin_left = 78.0

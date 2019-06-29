@@ -66,7 +66,7 @@ func win_check():
 	if enemy_mesh.get_child_count() <= 1:
 		Main.result = Main.Result.WIN
 		$ResultPanel/Anim.play("Win")
-		SoundManager.play(SoundManager.Sound.WIN1)
+		SoundManager.play(SoundManager.Sound.YOU_WIN1)
 		win = true
 
 func _on_Controls_move_left(pressed):
@@ -82,7 +82,7 @@ func _on_enemy_dead():
 func _on_player_dead():
 	Main.result = Main.Result.LOSE
 	$ResultPanel/Anim.play("Lose")
-	SoundManager.play(SoundManager.Sound.LOSE1)
+	SoundManager.play(SoundManager.Sound.YOU_LOSE1)
 
 func _on_Anim_animation_finished(anim_name):
 	get_tree().change_scene("res://Scenes/Levels/EndLevel.tscn")
