@@ -22,13 +22,14 @@ editor/display_folded = true
 
 [node name="Credits" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 260, 0 )
+position = Vector2( 240, 0 )
 
 [node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 0, -400 )
 
 [node name="Config" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( -218, 0 )
 
 [node name="AreYouSure" parent="Config" index="4"]

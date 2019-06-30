@@ -1,11 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Levels/GLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Controls/Controls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/ResultPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="Animation" id=1]
+resource_name = "EnemyDeath"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.05 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 resource_name = "Damage"
 length = 0.2
 tracks/0/type = "value"
@@ -45,20 +62,64 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "EnemyDeath"
-length = 0.2
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Hide"
+length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera:zoom")
+tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.5, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.05 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 56, 168 ), Vector2( 56, 420 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 2, 0.5, 2, 0.5 ),
+"update": 0,
+"values": [ Vector2( 56, 168 ), Vector2( 56, 184 ), Vector2( 56, 152 ), Vector2( 56, 168 ) ]
 }
 
 [node name="GLevel" type="Node2D"]
@@ -72,9 +133,11 @@ position = Vector2( 120, 200 )
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="ResultPanel" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 19, 0 )
 
 [node name="Effects" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 19, 0 )
 
 [node name="Camera" type="Camera2D" parent="Effects"]
@@ -94,15 +157,37 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Anim" type="AnimationPlayer" parent="Effects"]
-anims/Damage = SubResource( 1 )
-anims/EnemyDeath = SubResource( 2 )
+[node name="AnimEnemyDeath" type="AnimationPlayer" parent="Effects"]
+anims/EnemyDeath = SubResource( 1 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+[node name="AnimDamage" type="AnimationPlayer" parent="Effects"]
+anims/Damage = SubResource( 2 )
+
+[node name="Tap" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = 1
+
+[node name="Tap" type="Label" parent="Tap"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 56.0
+margin_top = 168.0
+margin_right = 188.0
+margin_bottom = 228.0
+rect_pivot_offset = Vector2( 66, 30 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0392157, 0.741176, 0.776471, 1 )
+text = "¡TAP!"
+
+[node name="Anim" type="AnimationPlayer" parent="Tap/Tap"]
+autoplay = "Idle"
+anims/Hide = SubResource( 4 )
+anims/Idle = SubResource( 5 )
 [connection signal="move_left" from="Controls" to="." method="_on_Controls_move_left"]
 [connection signal="move_right" from="Controls" to="." method="_on_Controls_move_right"]
 [connection signal="animation_finished" from="ResultPanel/Anim" to="." method="_on_Anim_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="ResultPanel"]

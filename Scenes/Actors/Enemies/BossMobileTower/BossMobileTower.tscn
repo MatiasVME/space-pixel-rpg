@@ -87,10 +87,10 @@ tracks/2/keys = {
 
 [node name="BossMobileTower" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-hp = 250
+hp = 300
 drop_xp = 2
 drop_score = 20
-attack = 10
+attack = 8
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
@@ -125,7 +125,7 @@ shape = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Fire" type="Timer" parent="." index="6"]
-wait_time = 0.1
+wait_time = 0.07
 autostart = true
 
 [node name="Anim" type="AnimationPlayer" parent="." index="7"]

@@ -4,7 +4,9 @@ class_name GBullet
 
 var dir
 var origin_pos
-var damage = 1
+var damage := 1
+
+var is_explosive := true
 
 onready var center = Vector2(Main.RES_X/2, Main.RES_Y/2)
 

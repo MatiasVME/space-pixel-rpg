@@ -23,3 +23,4 @@ shape = SubResource( 1 )
 
 [node name="Collision" parent="." index="3"]
 shape = SubResource( 2 )
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_CollisionArea_body_entered"]

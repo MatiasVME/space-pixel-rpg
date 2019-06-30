@@ -3,6 +3,7 @@ extends Node2D
 class_name GPlayer
 
 var player_data
+var is_frozen := true
 
 var player_bullet = preload("res://Scenes/Bullets/PlayerBullet.tscn")
 
@@ -21,6 +22,9 @@ func _on_dead():
 	$Timer.stop()
 
 func _on_Timer_timeout():
+	if is_frozen:
+		return
+	
 	if Main.result == Main.Result.WIN:
 		$Timer.stop()
 	

@@ -8,7 +8,7 @@ const MUSIC_ENABLE := true
 const SOUND_ENABLE := true
 const VERSION = "v0.1.2"
 
-const LAST_LEVEL := 7
+const LAST_LEVEL := 8
 
 var current_level := 0
 

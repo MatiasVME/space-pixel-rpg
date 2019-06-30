@@ -1,111 +1,115 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/Strocker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=3]
 
 [node name="E3" type="Node"]
 
-[node name="MobileTower" parent="." instance=ExtResource( 1 )]
-position = Vector2( 119, 200 )
-hp = 12
-attack = 8
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 200 )
 
-[node name="MobileTower2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 133, 181 )
-hp = 12
-attack = 8
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 200 )
 
-[node name="MobileTower3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 105, 181 )
-hp = 12
-attack = 8
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 188 )
 
-[node name="MobileTower4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 105, 216 )
-hp = 12
-attack = 8
+[node name="Box5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 188 )
 
-[node name="MobileTower5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 133, 216 )
-hp = 12
-attack = 8
+[node name="Box6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 188 )
 
-[node name="Box" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119, 162 )
-hp = 8
+[node name="Box7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 212 )
 
-[node name="Box2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 131, 162 )
-hp = 8
+[node name="Box8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 212 )
 
-[node name="Box3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 143, 162 )
-hp = 8
+[node name="Box9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 212 )
 
-[node name="Box4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 107, 162 )
-hp = 8
+[node name="Box10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98, 212 )
 
-[node name="Box5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 95, 162 )
-hp = 8
+[node name="Box11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98, 200 )
 
-[node name="Box6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 86, 174 )
-hp = 8
+[node name="Box12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98, 188 )
 
-[node name="Box7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 86, 186 )
-hp = 8
+[node name="Box13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 176 )
 
-[node name="Box8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 86, 197 )
-hp = 8
+[node name="Box14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 176 )
 
-[node name="Box9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 86, 208 )
-hp = 8
+[node name="Box15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 176 )
 
-[node name="Box10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 86, 219 )
-hp = 8
+[node name="Box16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 188 )
 
-[node name="Box11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 97, 231 )
-hp = 8
+[node name="Box17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 200 )
 
-[node name="Box12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 108, 231 )
-hp = 8
+[node name="Box18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 212 )
 
-[node name="Box13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119, 231 )
-hp = 8
+[node name="Box19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 224 )
 
-[node name="Box14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 130, 231 )
-hp = 8
+[node name="Box20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 224 )
 
-[node name="Box15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 142, 231 )
-hp = 8
+[node name="Box21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 224 )
 
-[node name="Box16" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 220 )
-hp = 8
+[node name="Box22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 262 )
 
-[node name="Box17" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 209 )
-hp = 8
+[node name="Box23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 262 )
 
-[node name="Box18" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 199 )
-hp = 8
+[node name="Box24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 262 )
 
-[node name="Box19" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 188 )
-hp = 8
+[node name="Box25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 142 )
 
-[node name="Box20" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 176 )
-hp = 8
+[node name="Box26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 142 )
+
+[node name="Box27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 142 )
+
+[node name="Strocker5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 110, 242 )
+
+[node name="Strocker6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 134, 242 )
+
+[node name="Strocker7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 134, 156 )
+
+[node name="Strocker8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 110, 156 )
+
+[node name="Strocker9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 122, 128 )
+
+[node name="Strocker10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 122, 276 )
+
+[node name="MobileTower" parent="." instance=ExtResource( 3 )]
+position = Vector2( 98, 174 )
+
+[node name="MobileTower2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 146, 174 )
+
+[node name="MobileTower3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 146, 222 )
+
+[node name="MobileTower4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 98, 222 )

@@ -16,6 +16,8 @@ var path_figure
 
 var win = false
 
+var start = false
+
 func _ready():
 	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
 	add_child(enemy_mesh)
@@ -39,6 +41,10 @@ func _ready():
 	
 	MusicManager.random_music()
 	
+	# Tutorial, solo aparece en android
+	if Main.current_level == 1 and OS.get_name() == "Android":
+		add_child(load("res://Scenes/Levels/Tutorial.tscn").instance())
+	
 func _process(delta):
 	# Entrada teclado
 	#
@@ -55,6 +61,16 @@ func _process(delta):
 			move_right = false
 	
 	dir = - int(move_left) + int(move_right)
+	
+	# Empezar cuando se preciona una tecla
+	if not start and dir != 0:
+		start = true
+		player.is_frozen = false
+		
+		$Tap/Tap/Anim.play("Hide")
+		
+		for enemy in get_tree().get_nodes_in_group("Enemy"):
+			enemy.is_frozen = false
 	
 	current_speed = lerp(current_speed, dir * speed, acceleration * delta)
 	path_figure.get_node("Follow").offset += current_speed
@@ -80,6 +96,8 @@ func _on_enemy_dead():
 		win_check()
 		
 func _on_player_dead():
+	if win: return
+	
 	Main.result = Main.Result.LOSE
 	$ResultPanel/Anim.play("Lose")
 	SoundManager.play(SoundManager.Sound.YOU_LOSE1)
@@ -88,21 +106,13 @@ func _on_Anim_animation_finished(anim_name):
 	get_tree().change_scene("res://Scenes/Levels/EndLevel.tscn")
 
 func _on_remove_hp(amount):
-	if not $Effects/Anim.is_playing():
-		$Effects/Anim.play("Damage")
+	$Effects/AnimDamage.play("Damage")
 		
 # Antes de morir definitivamente
 func _on_enemy_mark_to_death():
-	if not $Effects/Anim.is_playing():
-		$Effects/Anim.play("EnemyDeath")
+	$Effects/AnimEnemyDeath.play("EnemyDeath")
 		
 func _on_level_up(level):
 	player.player_data.max_hp += 2
 	player.player_data.add_hp(2)
 	player.player_data.attack += 1
-
-func _on_Timer_timeout():
-#
-#	if not win:
-#		win_check()
-	pass

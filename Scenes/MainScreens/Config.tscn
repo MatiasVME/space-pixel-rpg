@@ -61,9 +61,9 @@ align = 1
 valign = 1
 
 [node name="Back" parent="." instance=ExtResource( 5 )]
-margin_left = 82.0
+margin_left = 74.0
 margin_top = 336.0
-margin_right = 124.0
+margin_right = 116.0
 margin_bottom = 378.0
 
 [node name="AreYouSure" type="ConfirmationDialog" parent="."]

@@ -15,6 +15,9 @@ func _process(delta):
 	move_and_slide(dir * velocity)
 	$Sprite.rotation_degrees += delta * 600
 
+func get_class_name():
+	return "EnemyBullet"
+
 func _on_CollisionArea_body_entered(body):
 	if body is GPlayer:
 		body.damage(damage)

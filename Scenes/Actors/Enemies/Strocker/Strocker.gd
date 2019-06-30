@@ -4,6 +4,9 @@ var objective
 var dir
 
 func _process(delta):
+	if is_frozen:
+		return
+	
 	if objective and not is_mark_to_dead:
 		dir = (objective.global_position - global_position).normalized()
 		move_and_slide(dir * delta * 2000)

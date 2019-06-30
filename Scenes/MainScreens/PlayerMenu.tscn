@@ -19,9 +19,9 @@ position = Vector2( 24, 0 )
 position = Vector2( 24, 144 )
 
 [node name="Back" parent="." instance=ExtResource( 4 )]
-margin_left = 104.0
+margin_left = 96.0
 margin_top = 344.0
-margin_right = 146.0
+margin_right = 138.0
 margin_bottom = 386.0
 
 [node name="Score" type="Node2D" parent="."]

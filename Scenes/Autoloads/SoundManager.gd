@@ -20,7 +20,8 @@ enum Sound {
 	SPACESHIP_FLY_MENU2,
 	READY1,
 	YOU_WIN1,
-	YOU_LOSE1
+	YOU_LOSE1,
+	BULLET_EXPLOSION1
 }
 
 func play(sound):
@@ -68,3 +69,5 @@ func play(sound):
 			$YouWin1.play()
 		Sound.YOU_LOSE1:
 			$YouLose1.play()
+		Sound.BULLET_EXPLOSION1:
+			$BulletExplosion1.play()
