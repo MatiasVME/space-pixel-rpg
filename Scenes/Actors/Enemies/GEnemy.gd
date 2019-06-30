@@ -12,10 +12,13 @@ var is_mark_to_dead := false
 var can_fire := false
 var is_frozen := true
 
+var is_boss := false
+
 onready var player_data = DataManager.players[0]
 
 signal dead
 signal mark_to_death # Antes de morir
+signal damage # Recibe daño
 
 func dead():
 	player_data.add_xp(drop_xp)

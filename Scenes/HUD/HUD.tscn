@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/HUD/Status/Status.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/BossBar/BossBar.tscn" type="PackedScene" id=2]
 
 [node name="HUD" type="CanvasLayer"]
 
 [node name="Status" parent="." instance=ExtResource( 1 )]
 position = Vector2( 24, 0 )
+
+[node name="BossBar" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 35, 36 )

@@ -10,6 +10,9 @@ var rotator_acum = 0.0
 
 var enemy_bullet = preload("res://Scenes/Bullets/EnemyBullet.tscn")
 
+func _ready():
+	is_boss = true
+
 func _process(delta):
 	if is_frozen:
 		return
@@ -32,6 +35,7 @@ func damage(amount):
 	
 	$Anim.play("Damage")
 	hp -= amount
+	emit_signal("damage")
 	
 	if hp <= 0:
 		emit_signal("mark_to_death")

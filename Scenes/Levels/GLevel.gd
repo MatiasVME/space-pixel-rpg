@@ -25,7 +25,13 @@ func _ready():
 	for enemy in enemy_mesh.get_children():
 		enemy.connect("dead", self, "_on_enemy_dead")
 		enemy.connect("mark_to_death", self, "_on_enemy_mark_to_death")
-	
+		
+		# Verifica si existe un boss para conectar la barra
+		# si es que existe
+		if enemy.is_boss:
+			$HUD/BossBar.show()
+			$HUD/BossBar.set_boss(enemy)
+
 	path_figure = load("res://Scenes/Levels/PathFigures/" + str(LevelManager.path_figure) + ".tscn").instance()
 	add_child(path_figure)
 	
