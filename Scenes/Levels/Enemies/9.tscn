@@ -1,0 +1,204 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/Strocker.tscn" type="PackedScene" id=3]
+
+[node name="E9" type="Node"]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 132 )
+hp = 25
+
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 120 )
+hp = 25
+
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 120 )
+hp = 25
+
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 120 )
+hp = 25
+
+[node name="Box5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 120 )
+hp = 25
+
+[node name="Box6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 158, 120 )
+hp = 25
+
+[node name="Box7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 120 )
+hp = 25
+
+[node name="Box8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98, 120 )
+hp = 25
+
+[node name="Box9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 86, 120 )
+hp = 25
+
+[node name="Box10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 120 )
+hp = 25
+
+[node name="Box11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62, 120 )
+hp = 25
+
+[node name="Box12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182, 120 )
+hp = 25
+
+[node name="Box13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182, 132 )
+hp = 25
+
+[node name="Box14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182, 144 )
+hp = 25
+
+[node name="Box15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 144 )
+hp = 25
+
+[node name="Box16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 132 )
+hp = 25
+
+[node name="Box17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 158, 132 )
+hp = 25
+
+[node name="Box18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146, 132 )
+hp = 25
+
+[node name="Box19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 132 )
+hp = 25
+
+[node name="Box20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110, 132 )
+hp = 25
+
+[node name="Box21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98, 132 )
+hp = 25
+
+[node name="Box22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 86, 132 )
+hp = 25
+
+[node name="Box23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 132 )
+hp = 25
+
+[node name="Box24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62, 132 )
+hp = 25
+
+[node name="Box25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62, 144 )
+hp = 25
+
+[node name="Box26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 144 )
+hp = 25
+
+[node name="Box27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 156 )
+hp = 25
+
+[node name="Box28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62, 156 )
+hp = 25
+
+[node name="Box29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 156 )
+hp = 25
+
+[node name="Box30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182, 156 )
+hp = 25
+
+[node name="Box31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 168 )
+hp = 25
+
+[node name="Box32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 168 )
+hp = 25
+
+[node name="MobileTower" parent="." instance=ExtResource( 2 )]
+position = Vector2( 88, 146 )
+attack = 6
+
+[node name="MobileTower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 146 )
+attack = 6
+
+[node name="MobileTower3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 122, 154 )
+attack = 6
+
+[node name="MobileTower4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 122, 168 )
+attack = 6
+
+[node name="MobileTower5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 168 )
+attack = 6
+
+[node name="MobileTower6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 168 )
+attack = 6
+
+[node name="Strocker" parent="." instance=ExtResource( 3 )]
+position = Vector2( 122, 230 )
+hp = 10
+attack = 10
+
+[node name="Strocker2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 122, 216 )
+hp = 10
+attack = 10
+
+[node name="Strocker3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 134, 230 )
+hp = 10
+attack = 10
+
+[node name="Strocker4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 110, 230 )
+hp = 10
+attack = 10
+
+[node name="Strocker5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 122, 244 )
+hp = 10
+attack = 10
+
+[node name="Strocker6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 74, 188 )
+hp = 10
+attack = 10
+
+[node name="Strocker7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 170, 190 )
+hp = 10
+attack = 10
+
+[node name="Strocker8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 170, 244 )
+hp = 10
+attack = 10
+
+[node name="Strocker9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 74, 244 )
+hp = 10
+attack = 10

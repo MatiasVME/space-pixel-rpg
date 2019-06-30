@@ -5,7 +5,7 @@ func damage(amount):
 	
 	if hp <= 0:
 		emit_signal("mark_to_death")
-		$Collision.disabled = true
+#		$Collision.disabled = true
 		is_mark_to_dead = true
 		SoundManager.play(SoundManager.Sound.BOX_DEATH1)
 		.dead()

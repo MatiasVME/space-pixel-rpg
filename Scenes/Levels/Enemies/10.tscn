@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Strocker/Strocker.tscn" type="PackedScene" id=3]
 
 [node name="E001" type="Node"]
 
@@ -126,3 +128,31 @@ position = Vector2( 166, 224 )
 
 [node name="BoxBottom32" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 236 )
+
+[node name="MobileTower" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 210 )
+hp = 10
+attack = 8
+
+[node name="MobileTower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128, 210 )
+hp = 10
+attack = 8
+
+[node name="MobileTower3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 82, 176 )
+hp = 10
+attack = 8
+
+[node name="MobileTower4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 154, 176 )
+hp = 10
+attack = 8
+
+[node name="Strocker" parent="." instance=ExtResource( 3 )]
+position = Vector2( 92, 236 )
+hp = 20
+
+[node name="Strocker2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 142, 236 )
+hp = 20

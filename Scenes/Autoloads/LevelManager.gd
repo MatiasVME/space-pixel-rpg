@@ -29,6 +29,12 @@ func level(level):
 		8: 
 			enemy_mesh = 8
 			path_figure = 1
+		9: 
+			enemy_mesh = 9
+			path_figure = 4
+		10: 
+			enemy_mesh = 10
+			path_figure = 1
 		
 	get_tree().change_scene("res://Scenes/Levels/GLevel.tscn")
 	Main.current_level = level
