@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/SimpleTower/SimpleTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=2]
+
+[node name="E011" type="Node"]
+
+[node name="SimpleTower" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 200 )
+fire_rate = 0.3
+
+[node name="SimpleTower6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 106, 214 )
+attack = 10
+fire_rate = 0.25
+
+[node name="SimpleTower7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 214 )
+attack = 10
+fire_rate = 0.25
+
+[node name="SimpleTower8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 186 )
+attack = 10
+fire_rate = 0.25
+
+[node name="SimpleTower9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 106, 186 )
+attack = 10
+fire_rate = 0.25
+
+[node name="MobileTower" parent="." instance=ExtResource( 2 )]
+position = Vector2( 92, 200 )
+
+[node name="MobileTower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 172 )
+
+[node name="MobileTower3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 148, 200 )
+
+[node name="MobileTower4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 226 )

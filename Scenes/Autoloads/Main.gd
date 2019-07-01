@@ -4,11 +4,11 @@ const RES_X := 240
 const RES_Y := 400
 
 const DEBUG := false
-const MUSIC_ENABLE := true
+const MUSIC_ENABLE := false
 const SOUND_ENABLE := true
 const VERSION = "v1.0.0.alpha"
 
-const LAST_LEVEL := 10
+const LAST_LEVEL := 12
 
 var current_level := 0
 
