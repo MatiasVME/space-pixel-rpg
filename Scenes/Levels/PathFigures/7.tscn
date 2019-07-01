@@ -11,7 +11,7 @@ _data = {
 curve = SubResource( 1 )
 
 [node name="Follow" type="PathFollow2D" parent="."]
-position = Vector2( 36, 84 )
+position = Vector2( 120, 24 )
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="."]

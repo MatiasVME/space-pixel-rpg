@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/SimpleTower/SimpleTower.tscn" type="PackedScene" id=2]
+
+[node name="E12" type="Node"]
+
+[node name="MobileTower2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 181 )
+hp = 16
+attack = 8
+
+[node name="MobileTower8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 132 )
+hp = 16
+attack = 8
+
+[node name="MobileTower11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 231 )
+hp = 16
+attack = 8
+
+[node name="MobileTower3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 181 )
+hp = 16
+attack = 8
+
+[node name="MobileTower7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 132 )
+hp = 16
+attack = 8
+
+[node name="MobileTower10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 231 )
+hp = 16
+attack = 8
+
+[node name="MobileTower4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 216 )
+hp = 16
+attack = 8
+
+[node name="MobileTower9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 167 )
+hp = 16
+attack = 8
+
+[node name="MobileTower13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 105, 266 )
+hp = 16
+attack = 8
+
+[node name="MobileTower5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 216 )
+hp = 16
+attack = 8
+
+[node name="MobileTower6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 167 )
+hp = 16
+attack = 8
+
+[node name="MobileTower12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133, 266 )
+hp = 16
+attack = 8
+
+[node name="SimpleTower" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 198 )
+
+[node name="SimpleTower10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 149 )
+
+[node name="SimpleTower12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 248 )
+
+[node name="SimpleTower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 105, 198 )
+
+[node name="SimpleTower9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 105, 149 )
+
+[node name="SimpleTower15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 105, 248 )
+
+[node name="SimpleTower3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 198 )
+
+[node name="SimpleTower7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 149 )
+
+[node name="SimpleTower14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 248 )
+
+[node name="SimpleTower4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 216 )
+
+[node name="SimpleTower8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 167 )
+
+[node name="SimpleTower11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 266 )
+
+[node name="SimpleTower5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 182 )
+
+[node name="SimpleTower6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 133 )
+
+[node name="SimpleTower13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 232 )

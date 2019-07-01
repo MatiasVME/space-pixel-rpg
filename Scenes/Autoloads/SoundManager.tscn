@@ -28,87 +28,85 @@ script = ExtResource( 1 )
 
 [node name="Button1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="DeathScream6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="Laser1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -15.0
+volume_db = -10.0
 
 [node name="Laser2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -15.0
+volume_db = -10.0
 
 [node name="LevelUP1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="PlayerDamage1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="PlayerDeath1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="Win1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="Lose1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="BoxDeath1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="SpaceshipFlyMenu1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="Ready1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
-volume_db = -10.0
+volume_db = -5.0
 pitch_scale = 1.5
 
 [node name="YouLose1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = -10.0
 pitch_scale = 1.5
 
 [node name="YouWin1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
-volume_db = -10.0
 pitch_scale = 1.5
 
 [node name="BulletExplosion1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
-volume_db = -15.0
+volume_db = -5.0

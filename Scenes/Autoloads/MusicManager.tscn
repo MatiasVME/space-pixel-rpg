@@ -14,28 +14,21 @@ script = ExtResource( 1 )
 
 [node name="Crazy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -10.0
 
 [node name="Fly" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -10.0
 
 [node name="Invasion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
 
 [node name="March" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
 
 [node name="Something" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
 
 [node name="Sunless" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -10.0
 
 [node name="Underground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -10.0
