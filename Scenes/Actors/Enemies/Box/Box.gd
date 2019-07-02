@@ -13,5 +13,5 @@ func damage(amount):
 func _on_HitArea_body_entered(body):
 	if body is PlayerBullet:
 		damage(body.damage)
-		body.queue_free()
+		body.free()
 		

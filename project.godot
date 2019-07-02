@@ -106,7 +106,9 @@ _global_script_class_icons={
 
 config/name="Space Pixel RPG"
 run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://PromoAssets/icon/mipmap-xxxhdpi/IconoSPRPG.png"
+boot_splash/bg_color=Color( 0.0352941, 0.0941176, 0.2, 1 )
+config/icon="res://PromoAssets/web_hi_res_512.png"
 
 [autoload]
 

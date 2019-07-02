@@ -48,7 +48,7 @@ func _on_CanFire_timeout():
 func _on_HitArea_body_entered(body):
 	if body is PlayerBullet:
 		damage(body.damage)
-		body.queue_free()
+		body.free()
 
 func _on_Anim_animation_finished(anim_name):
 	if anim_name == "Dead":
