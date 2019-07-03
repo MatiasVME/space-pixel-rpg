@@ -92,7 +92,7 @@ func _process(delta):
 
 func win_check():
 	# Es 1 por que el último enemigo todavía no muere
-	if enemy_mesh.get_child_count() <= 1:
+	if enemy_mesh.get_child_count() <= 0:
 		Main.result = Main.Result.WIN
 		$ResultPanel/Anim.play("Win")
 		SoundManager.play(SoundManager.Sound.YOU_WIN1)
@@ -113,10 +113,10 @@ func _on_Controls_move_right(pressed):
 	move_right = pressed
 	
 func _on_enemy_dead(who):
-	if win: return
+#	if win: return
+#	win_check()
 	
-	win_check()
-	
+	# Checkeamos si no quedan enemigos que no sean cajas
 	if ot_reduces_boxes_hp and only_boxes_check(who):
 		ot_reduces_boxes_hp = false
 		
@@ -146,3 +146,7 @@ func _on_level_up(level):
 	player.player_data.max_hp += 2
 	player.player_data.add_hp(2)
 	player.player_data.attack += 1
+
+func _on_WinCheck_timeout():
+	if win: return
+	win_check()

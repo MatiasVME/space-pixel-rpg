@@ -3,6 +3,13 @@ extends Node2D
 onready var player_data = DataManager.players[0]
 
 func _ready():
+	# Ads
+	if OS.get_name() == "Android":
+		randomize()
+		
+		if rand_range(0, 1.8) < 1:
+			Firebase.firebase.show_interstitial_ad()
+	
 	player_data.revive()
 	player_data.restore_hp()
 	

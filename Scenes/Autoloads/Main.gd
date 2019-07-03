@@ -4,9 +4,10 @@ const RES_X := 240
 const RES_Y := 400
 
 const DEBUG := false
+const DEBUG_FIREBASE := false # false
 const MUSIC_ENABLE := true
 const SOUND_ENABLE := true
-const VERSION = "v1.0.0.beta1"
+const VERSION = "v1.0.0"
 
 const LAST_LEVEL := 20
 

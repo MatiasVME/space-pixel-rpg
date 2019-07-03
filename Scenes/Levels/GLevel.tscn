@@ -186,8 +186,13 @@ text = "¡TAP!"
 autoplay = "Idle"
 anims/Hide = SubResource( 4 )
 anims/Idle = SubResource( 5 )
+
+[node name="WinCheck" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 [connection signal="move_left" from="Controls" to="." method="_on_Controls_move_left"]
 [connection signal="move_right" from="Controls" to="." method="_on_Controls_move_right"]
 [connection signal="animation_finished" from="ResultPanel/Anim" to="." method="_on_Anim_animation_finished"]
+[connection signal="timeout" from="WinCheck" to="." method="_on_WinCheck_timeout"]
 
 [editable path="ResultPanel"]

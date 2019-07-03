@@ -102,11 +102,14 @@ _global_script_class_icons={
 "RPGWeightInventory": "res://addons/rpg_elements/icons/RPGWeightInventory.png"
 }
 
+[android]
+
+modules="org/godotengine/godot/FireBase,org/godotengine/godot/SQLBridge"
+
 [application]
 
 config/name="Space Pixel RPG"
 run/main_scene="res://Scenes/Main.tscn"
-boot_splash/image="res://PromoAssets/icon/mipmap-xxxhdpi/IconoSPRPG.png"
 boot_splash/bg_color=Color( 0.0352941, 0.0941176, 0.2, 1 )
 config/icon="res://PromoAssets/web_hi_res_512.png"
 
@@ -118,6 +121,7 @@ PlayerManager="*res://Scenes/Autoloads/PlayerManager.gd"
 LevelManager="*res://Scenes/Autoloads/LevelManager.gd"
 MusicManager="*res://Scenes/Autoloads/MusicManager.tscn"
 SoundManager="*res://Scenes/Autoloads/SoundManager.tscn"
+Firebase="*res://Scenes/Autoloads/Firebase.gd"
 
 [display]
 
