@@ -85,7 +85,7 @@ tracks/2/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[node name="Strocker" index="0" instance=ExtResource( 1 )]
+[node name="Strocker" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 hp = 4
 drop_score = 1

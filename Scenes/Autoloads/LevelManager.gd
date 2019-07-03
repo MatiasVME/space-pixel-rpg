@@ -50,6 +50,21 @@ func level(level):
 		15: 
 			enemy_mesh = 15
 			path_figure = 3
+		16: 
+			enemy_mesh = 16
+			path_figure = 5
+		17: 
+			enemy_mesh = 17
+			path_figure = 5
+		18: 
+			enemy_mesh = 18
+			path_figure = 5
+		19: 
+			enemy_mesh = 19
+			path_figure = 1
+		20: 
+			enemy_mesh = 20
+			path_figure = 3
 		
 	get_tree().change_scene("res://Scenes/Levels/GLevel.tscn")
 	Main.current_level = level

@@ -146,10 +146,6 @@ attack = 6
 position = Vector2( 122, 154 )
 attack = 6
 
-[node name="MobileTower4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 122, 168 )
-attack = 6
-
 [node name="MobileTower5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 136, 168 )
 attack = 6
@@ -157,11 +153,6 @@ attack = 6
 [node name="MobileTower6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 108, 168 )
 attack = 6
-
-[node name="Strocker" parent="." instance=ExtResource( 3 )]
-position = Vector2( 122, 230 )
-hp = 10
-attack = 10
 
 [node name="Strocker2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 122, 216 )
@@ -184,21 +175,21 @@ hp = 10
 attack = 10
 
 [node name="Strocker6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 74, 188 )
+position = Vector2( 94, 200 )
 hp = 10
 attack = 10
 
 [node name="Strocker7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 170, 190 )
+position = Vector2( 152, 202 )
 hp = 10
 attack = 10
 
 [node name="Strocker8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 170, 244 )
+position = Vector2( 152, 256 )
 hp = 10
 attack = 10
 
 [node name="Strocker9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 74, 244 )
+position = Vector2( 94, 256 )
 hp = 10
 attack = 10

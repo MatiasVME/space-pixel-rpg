@@ -33,7 +33,9 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="GPlayer" type="KinematicBody2D"]
+[node name="GPlayer" type="KinematicBody2D" groups=[
+"Player",
+]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

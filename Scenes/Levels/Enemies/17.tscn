@@ -1,0 +1,150 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/Ghost/Ghost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/SimpleTower/SimpleTower.tscn" type="PackedScene" id=3]
+
+[node name="E16" type="Node"]
+
+[node name="Ghost" parent="." instance=ExtResource( 1 )]
+position = Vector2( 121, 204 )
+
+[node name="Box" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 246 )
+hp = 30
+
+[node name="Box23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 162 )
+hp = 30
+
+[node name="Box2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 132, 246 )
+hp = 30
+
+[node name="Box24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 132, 162 )
+hp = 30
+
+[node name="Box3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 246 )
+hp = 30
+
+[node name="Box22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 162 )
+hp = 30
+
+[node name="Box4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 246 )
+hp = 30
+
+[node name="Box5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 246 )
+hp = 30
+
+[node name="Box26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 108, 162 )
+hp = 30
+
+[node name="Box6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 246 )
+hp = 30
+
+[node name="Box25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 162 )
+hp = 30
+
+[node name="Box7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 246 )
+hp = 30
+
+[node name="Box8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 234 )
+hp = 30
+
+[node name="Box16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 234 )
+hp = 30
+
+[node name="Box9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 222 )
+hp = 30
+
+[node name="Box17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 222 )
+hp = 30
+
+[node name="Box10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 210 )
+hp = 30
+
+[node name="Box15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 210 )
+hp = 30
+
+[node name="Box11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 198 )
+hp = 30
+
+[node name="Box18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 198 )
+hp = 30
+
+[node name="Box12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 186 )
+hp = 30
+
+[node name="Box19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 186 )
+hp = 30
+
+[node name="Box13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 174 )
+hp = 30
+
+[node name="Box20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 174 )
+hp = 30
+
+[node name="Box14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 84, 162 )
+hp = 30
+
+[node name="Box21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 162 )
+hp = 30
+
+[node name="SimpleTower" parent="." instance=ExtResource( 3 )]
+position = Vector2( 110, 204 )
+
+[node name="SimpleTower2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 132, 204 )
+
+[node name="SimpleTower3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 121, 192 )
+
+[node name="SimpleTower4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 121, 216 )
+
+[node name="SimpleTower5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 110, 216 )
+
+[node name="SimpleTower6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 132, 216 )
+
+[node name="SimpleTower7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 132, 192 )
+
+[node name="SimpleTower8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 110, 192 )
+
+[node name="SimpleTower9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 174 )
+
+[node name="SimpleTower10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, 174 )
+
+[node name="SimpleTower11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, 234 )
+
+[node name="SimpleTower12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 234 )

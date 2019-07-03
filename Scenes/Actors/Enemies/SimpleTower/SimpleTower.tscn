@@ -48,6 +48,7 @@ script = ExtResource( 2 )
 hp = 30
 drop_score = 4
 attack = 8
+fire_rate = 0.5
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )

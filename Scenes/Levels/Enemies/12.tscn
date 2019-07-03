@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Actors/Enemies/Box/Box.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Actors/Enemies/SimpleTower/SimpleTower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Actors/Enemies/Ghost/Ghost.tscn" type="PackedScene" id=4]
 
 [node name="E12" type="Node"]
 
@@ -120,3 +121,7 @@ position = Vector2( 120, 216 )
 
 [node name="SimpleTower5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 182 )
+
+[node name="Ghost" parent="." instance=ExtResource( 4 )]
+position = Vector2( 119, 256 )
+hp = 200

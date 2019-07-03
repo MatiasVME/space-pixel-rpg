@@ -25,15 +25,15 @@ func play(sound):
 		Music.FLY:
 			current_music = $Fly
 		Music.MARCH:
-			current_music = $Invasion
-		Music.SOMETHING:
 			current_music = $March
-		Music.UNDERGROUND:
+		Music.SOMETHING:
 			current_music = $Something
+		Music.UNDERGROUND:
+			current_music = $Underground
 		Music.SUNLESS:
 			current_music = $Sunless
 		Music.INVASION:
-			current_music = $Underground
+			current_music = $Invasion
 	
 	current_music.play()
 	

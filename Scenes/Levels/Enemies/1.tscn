@@ -6,123 +6,164 @@
 
 [node name="Box4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 106, 188 )
+is_frail = true
 
 [node name="Box6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 188 )
+is_frail = true
 
 [node name="Box10" parent="." instance=ExtResource( 1 )]
 position = Vector2( 94, 212 )
+is_frail = true
 
 [node name="Box13" parent="." instance=ExtResource( 1 )]
 position = Vector2( 106, 176 )
+is_frail = true
 
 [node name="Box15" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 176 )
+is_frail = true
 
 [node name="Box18" parent="." instance=ExtResource( 1 )]
 position = Vector2( 142, 212 )
+is_frail = true
 
 [node name="Box19" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 224 )
+is_frail = true
 
 [node name="Box20" parent="." instance=ExtResource( 1 )]
 position = Vector2( 118, 224 )
+is_frail = true
 
 [node name="Box21" parent="." instance=ExtResource( 1 )]
 position = Vector2( 106, 224 )
+is_frail = true
 
 [node name="BoxBottom1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 106, 248 )
+is_frail = true
 
 [node name="BoxBottom2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 118, 248 )
+is_frail = true
 
 [node name="BoxBottom3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 248 )
+is_frail = true
 
 [node name="BoxBottom4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 94, 248 )
+is_frail = true
 
 [node name="BoxBottom5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 248 )
+is_frail = true
 
 [node name="BoxBottom6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 142, 248 )
+is_frail = true
 
 [node name="BoxBottom7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 248 )
+is_frail = true
 
 [node name="BoxBottom8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 236 )
+is_frail = true
 
 [node name="BoxBottom9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 236 )
+is_frail = true
 
 [node name="BoxBottom10" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 236 )
+is_frail = true
 
 [node name="BoxBottom11" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 224 )
+is_frail = true
 
 [node name="BoxBottom12" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 212 )
+is_frail = true
 
 [node name="BoxBottom13" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 200 )
+is_frail = true
 
 [node name="BoxBottom14" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 188 )
+is_frail = true
 
 [node name="BoxBottom15" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 176 )
+is_frail = true
 
 [node name="BoxBottom16" parent="." instance=ExtResource( 1 )]
 position = Vector2( 70, 164 )
+is_frail = true
 
 [node name="BoxBottom17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 164 )
+is_frail = true
 
 [node name="BoxBottom18" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 152 )
+is_frail = true
 
 [node name="BoxBottom19" parent="." instance=ExtResource( 1 )]
 position = Vector2( 94, 152 )
+is_frail = true
 
 [node name="BoxBottom20" parent="." instance=ExtResource( 1 )]
 position = Vector2( 106, 152 )
+is_frail = true
 
 [node name="BoxBottom21" parent="." instance=ExtResource( 1 )]
 position = Vector2( 118, 152 )
+is_frail = true
 
 [node name="BoxBottom22" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 152 )
+is_frail = true
 
 [node name="BoxBottom23" parent="." instance=ExtResource( 1 )]
 position = Vector2( 142, 152 )
+is_frail = true
 
 [node name="BoxBottom24" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 152 )
+is_frail = true
 
 [node name="BoxBottom25" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 164 )
+is_frail = true
 
 [node name="BoxBottom26" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 164 )
+is_frail = true
 
 [node name="BoxBottom27" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 176 )
+is_frail = true
 
 [node name="BoxBottom28" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 188 )
+is_frail = true
 
 [node name="BoxBottom29" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 200 )
+is_frail = true
 
 [node name="BoxBottom30" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 212 )
+is_frail = true
 
 [node name="BoxBottom31" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 224 )
+is_frail = true
 
 [node name="BoxBottom32" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166, 236 )
+is_frail = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Autoloads/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/Button1.wav" type="AudioStream" id=2]
@@ -13,15 +13,17 @@
 [ext_resource path="res://Sounds/SFX/LevelUP1.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/SFX/PlayerDamage1.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/SFX/PlayerDead1.wav" type="AudioStream" id=13]
-[ext_resource path="res://Sounds/SFX/Win1.wav" type="AudioStream" id=14]
-[ext_resource path="res://Sounds/SFX/Lose1.wav" type="AudioStream" id=15]
-[ext_resource path="res://Sounds/SFX/BoxDeath1.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu1.wav" type="AudioStream" id=17]
-[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu2.wav" type="AudioStream" id=18]
-[ext_resource path="res://Sounds/SFX/Ready1.wav" type="AudioStream" id=19]
-[ext_resource path="res://Sounds/SFX/YouLose1.wav" type="AudioStream" id=20]
-[ext_resource path="res://Sounds/SFX/YouWin1.wav" type="AudioStream" id=21]
-[ext_resource path="res://Sounds/SFX/BulletExplosion1.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/SFX/BoxDeath1.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/SFX/SpaceshipFlyMenu2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/SFX/Ready1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/SFX/YouLose1.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/SFX/YouWin1.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sounds/SFX/BulletExplosion1.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/SFX/Hit1.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sounds/SFX/Hit2.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/SFX/Hit3.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/SFX/Hit4.wav" type="AudioStream" id=24]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource( 1 )
@@ -74,39 +76,47 @@ volume_db = -5.0
 stream = ExtResource( 13 )
 volume_db = -5.0
 
-[node name="Win1" type="AudioStreamPlayer" parent="."]
+[node name="BoxDeath1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = -5.0
 
-[node name="Lose1" type="AudioStreamPlayer" parent="."]
+[node name="SpaceshipFlyMenu1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -5.0
 
-[node name="BoxDeath1" type="AudioStreamPlayer" parent="."]
+[node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = -5.0
 
-[node name="SpaceshipFlyMenu1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
-volume_db = -5.0
-
-[node name="SpaceshipFlyMenu2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
-volume_db = -5.0
-
 [node name="Ready1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 17 )
 volume_db = -5.0
 pitch_scale = 1.5
 
 [node name="YouLose1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 18 )
 pitch_scale = 1.5
 
 [node name="YouWin1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
+stream = ExtResource( 19 )
 pitch_scale = 1.5
 
 [node name="BulletExplosion1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
+stream = ExtResource( 20 )
 volume_db = -5.0
+
+[node name="Hit1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -10.0
+
+[node name="Hit2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="Hit3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="Hit4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -10.0

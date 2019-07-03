@@ -20,8 +20,15 @@ signal dead
 signal mark_to_death # Antes de morir
 signal damage # Recibe daño
 
+func _ready():
+	connect("damage", self, "_on_damage")
+
 func dead():
 	player_data.add_xp(drop_xp)
 	Main.store_score += drop_score
 	emit_signal("dead")
 	queue_free()
+	
+func _on_damage():
+	SoundManager.play_rand_hit()
+	

@@ -18,20 +18,13 @@ var win = false
 
 var start = false
 
-func _ready():
-	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
-	add_child(enemy_mesh)
-	
-	for enemy in enemy_mesh.get_children():
-		enemy.connect("dead", self, "_on_enemy_dead")
-		enemy.connect("mark_to_death", self, "_on_enemy_mark_to_death")
-		
-		# Verifica si existe un boss para conectar la barra
-		# si es que existe
-		if enemy.is_boss:
-			$HUD/BossBar.show()
-			$HUD/BossBar.set_boss(enemy)
+# Sirve para que reducir una sola vez la vida de las
+# cajas cuando mueren todos los enemigos.
+var ot_reduces_boxes_hp = true 
 
+func _ready():
+	# Primero generamos al path y al player para que los
+	# enemigos puedan detectar al player.
 	path_figure = load("res://Scenes/Levels/PathFigures/" + str(LevelManager.path_figure) + ".tscn").instance()
 	add_child(path_figure)
 	
@@ -42,6 +35,19 @@ func _ready():
 	player.player_data.connect("remove_hp", self, "_on_remove_hp")
 	player.player_data.connect("level_up", self, "_on_level_up")
 	
+	enemy_mesh = load("res://Scenes/Levels/Enemies/" + str(LevelManager.enemy_mesh) + ".tscn").instance()
+	add_child(enemy_mesh)
+	
+	for enemy in enemy_mesh.get_children():
+		enemy.connect("dead", self, "_on_enemy_dead", [enemy])
+		enemy.connect("mark_to_death", self, "_on_enemy_mark_to_death")
+		
+		# Verifica si existe un boss para conectar la barra
+		# si es que existe
+		if enemy.is_boss:
+			$HUD/BossBar.show()
+			$HUD/BossBar.set_boss(enemy)
+	
 	Main.reset_store()
 	Main.result = Main.Result.NONE
 	
@@ -50,6 +56,7 @@ func _ready():
 	# Tutorial, solo aparece en android
 	if Main.current_level == 1 and OS.get_name() == "Android":
 		add_child(load("res://Scenes/Levels/Tutorial.tscn").instance())
+		
 	
 func _process(delta):
 	# Entrada teclado
@@ -90,16 +97,33 @@ func win_check():
 		$ResultPanel/Anim.play("Win")
 		SoundManager.play(SoundManager.Sound.YOU_WIN1)
 		win = true
-
+		
+func only_boxes_check(enemy_except):
+	var all_enemies = get_tree().get_nodes_in_group("Enemy")
+	
+	for enemy in all_enemies:
+		if not enemy.is_in_group("Box") and enemy != enemy_except:
+			return false
+	return true
+	
 func _on_Controls_move_left(pressed):
 	move_left = pressed
 
 func _on_Controls_move_right(pressed):
 	move_right = pressed
 	
-func _on_enemy_dead():
-	if not win:
-		win_check()
+func _on_enemy_dead(who):
+	if win: return
+	
+	win_check()
+	
+	if ot_reduces_boxes_hp and only_boxes_check(who):
+		ot_reduces_boxes_hp = false
+		
+		var boxes = get_tree().get_nodes_in_group("Box")
+		
+		for box in boxes:
+			box.frail_mode()
 		
 func _on_player_dead():
 	if win: return

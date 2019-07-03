@@ -1,0 +1,152 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/GEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTowerSuper/BossMobileTowerSuper.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-6.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTowerSuper/BossMobileTower-6.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-0.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-1.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-2.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-3.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-4.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Actors/Enemies/BossMobileTower/BossMobileTower-5.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "move",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 198.01
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 104.0
+
+[sub_resource type="Animation" id=6]
+resource_name = "Damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00637013, 0.1, 0.2 ),
+"transitions": PoolRealArray( 0.5, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="BossMobileTowerSuper" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+hp = 450
+drop_xp = 2
+drop_score = 40
+attack = 6
+
+[node name="Sprite" parent="." index="0"]
+rotation = -0.261799
+texture = ExtResource( 3 )
+
+[node name="Origin" type="Position2D" parent="Sprite" index="0"]
+position = Vector2( 0, -18 )
+
+[node name="Dest" type="Position2D" parent="Sprite" index="1"]
+position = Vector2( 0, -22 )
+
+[node name="Canon2" type="Sprite" parent="." index="1"]
+rotation = 0.261799
+texture = ExtResource( 4 )
+
+[node name="Origin" type="Position2D" parent="Canon2" index="0"]
+position = Vector2( 0, -18 )
+
+[node name="Dest" type="Position2D" parent="Canon2" index="1"]
+position = Vector2( 0, -22 )
+
+[node name="Body" type="AnimatedSprite" parent="." index="2"]
+frames = SubResource( 1 )
+animation = "move"
+
+[node name="Collision" parent="." index="3"]
+shape = SubResource( 2 )
+
+[node name="HitArea" parent="." index="4"]
+visible = false
+
+[node name="Collision" parent="HitArea" index="0"]
+shape = SubResource( 3 )
+
+[node name="DetectPlayerArea" type="Area2D" parent="." index="5"]
+
+[node name="Collision" type="CollisionShape2D" parent="DetectPlayerArea" index="0"]
+shape = SubResource( 4 )
+
+[node name="FireArea" type="Area2D" parent="." index="6"]
+
+[node name="Collision" type="CollisionShape2D" parent="FireArea" index="0"]
+shape = SubResource( 5 )
+
+[node name="Fire" type="Timer" parent="." index="7"]
+wait_time = 0.07
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="." index="8"]
+anims/Damage = SubResource( 6 )
+anims/Dead = SubResource( 7 )
+[connection signal="body_entered" from="HitArea" to="." method="_on_HitArea_body_entered"]
+[connection signal="body_entered" from="DetectPlayerArea" to="." method="_on_DetectPlayerArea_body_entered"]
+[connection signal="body_exited" from="DetectPlayerArea" to="." method="_on_DetectPlayerArea_body_exited"]
+[connection signal="body_entered" from="FireArea" to="." method="_on_FireArea_body_entered"]
+[connection signal="body_exited" from="FireArea" to="." method="_on_FireArea_body_exited"]
+[connection signal="timeout" from="Fire" to="." method="_on_Fire_timeout"]
+[connection signal="animation_finished" from="Anim" to="." method="_on_Anim_animation_finished"]

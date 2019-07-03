@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/MainScreens/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/i_pixel_u/I-pixel-u.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/Buttons/Credits/Credits-Pressed.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Buttons/Config/Config-Normal.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Buttons/Config/Config-Pressed.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Buttons/Shield/Shield-1.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Buttons/Shield/Shield-2.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -36,10 +38,11 @@ position = Vector2( 28, 32 )
 position = Vector2( 32, 0 )
 
 [node name="Credits" type="TextureButton" parent="."]
-margin_left = 182.0
+margin_left = 99.0
 margin_top = 344.0
-margin_right = 224.0
+margin_right = 141.0
 margin_bottom = 386.0
+rect_pivot_offset = Vector2( 21, 21 )
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 
@@ -54,5 +57,26 @@ texture_pressed = ExtResource( 8 )
 [node name="Go" type="TouchScreenButton" parent="."]
 position = Vector2( 120, 228 )
 shape = SubResource( 2 )
+
+[node name="PrivacyPolicy" type="TextureButton" parent="."]
+margin_left = 182.0
+margin_top = 344.0
+margin_right = 224.0
+margin_bottom = 386.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+
+[node name="Dialog" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = 20.0
+margin_top = 46.0
+margin_right = 220.0
+margin_bottom = 121.0
+window_title = "Privacy Policy"
+resizable = true
+dialog_text = "Would you like to
+see our privacy policies?"
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Go" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="PrivacyPolicy" to="." method="_on_PrivacyPolicy_pressed"]
+[connection signal="confirmed" from="Dialog" to="." method="_on_Dialog_confirmed"]

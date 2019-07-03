@@ -25,6 +25,7 @@ func damage(amount):
 		
 	$Anim.play("Damage")
 	hp -= amount
+	emit_signal("damage")
 	
 	if hp <= 0:
 		emit_signal("mark_to_death")

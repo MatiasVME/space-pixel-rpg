@@ -82,8 +82,7 @@ func _on_Fire_timeout():
 	enemy_bullet_object.damage = attack
 	enemy_bullet_object.velocity = 50
 	get_parent().get_parent().add_child(enemy_bullet_object)
-	
-	
+		
 func _on_HitArea_body_entered(body):
 	if body is PlayerBullet:
 		damage(body.damage)

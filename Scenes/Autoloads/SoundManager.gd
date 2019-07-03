@@ -13,16 +13,21 @@ enum Sound {
 	LEVEL_UP1,
 	PLAYER_DAMAGE1,
 	PLAYER_DEATH1,
-	WIN1,
-	LOSE1,
 	BOX_DEATH1,
 	SPACESHIP_FLY_MENU1,
 	SPACESHIP_FLY_MENU2,
 	READY1,
 	YOU_WIN1,
 	YOU_LOSE1,
-	BULLET_EXPLOSION1
+	BULLET_EXPLOSION1,
+	HIT1,
+	HIT2,
+	HIT3,
+	HIT4
 }
+
+func _ready():
+	randomize()
 
 func play(sound):
 	if not Main.SOUND_ENABLE:
@@ -53,10 +58,6 @@ func play(sound):
 			$PlayerDamage1.play()
 		Sound.PLAYER_DEATH1:
 			$PlayerDeath1.play()
-		Sound.WIN1:
-			$Win1.play()
-		Sound.LOSE1:
-			$Lose1.play()
 		Sound.BOX_DEATH1:
 			$BoxDeath1.play()
 		Sound.SPACESHIP_FLY_MENU1:
@@ -71,3 +72,15 @@ func play(sound):
 			$YouLose1.play()
 		Sound.BULLET_EXPLOSION1:
 			$BulletExplosion1.play()
+		Sound.HIT1:
+			$Hit1.play()
+		Sound.HIT2:
+			$Hit2.play()
+		Sound.HIT3:
+			$Hit3.play()
+		Sound.HIT4:
+			$Hit4.play()
+
+func play_rand_hit():
+	var rand_num = int(round(rand_range(Sound.HIT1, Sound.HIT2)))
+	play(rand_num)

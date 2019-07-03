@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Actors/Enemies/SimpleTower/SimpleTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Actors/Enemies/MobileTower/MobileTower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/Enemies/Ghost/Ghost.tscn" type="PackedScene" id=3]
+
+[node name="E19" type="Node"]
+
+[node name="SimpleTower" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 200 )
+hp = 50
+fire_rate = 0.3
+
+[node name="SimpleTower6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 106, 214 )
+hp = 50
+attack = 10
+fire_rate = 0.25
+
+[node name="SimpleTower8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 134, 186 )
+hp = 50
+attack = 10
+fire_rate = 0.25
+
+[node name="MobileTower" parent="." instance=ExtResource( 2 )]
+position = Vector2( 92, 200 )
+hp = 40
+attack = 15
+
+[node name="MobileTower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 172 )
+hp = 40
+attack = 15
+
+[node name="MobileTower3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 148, 200 )
+hp = 40
+attack = 15
+
+[node name="MobileTower4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 226 )
+hp = 40
+attack = 15
+
+[node name="Ghost" parent="." instance=ExtResource( 3 )]
+position = Vector2( 92, 248 )
+
+[node name="Ghost2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 148, 248 )

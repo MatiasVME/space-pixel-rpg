@@ -18,7 +18,9 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
+
+[node name="Dialog" parent="MainMenu" index="7"]
+visible = false
 
 [node name="Credits" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
