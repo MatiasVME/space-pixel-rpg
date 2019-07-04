@@ -19,6 +19,9 @@ smoothing_speed = 3.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 2 )]
 
+[node name="PrivacyPolicy" parent="MainMenu" index="6"]
+visible = false
+
 [node name="Dialog" parent="MainMenu" index="7"]
 visible = false
 
